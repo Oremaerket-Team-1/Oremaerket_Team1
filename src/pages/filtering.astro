@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { Image } from "astro:assets";
+import sunriseImage from "../../public/assets/img/filtering/sunrise.webp"
+---
+
+
+
+<Layout>
+  <Header />
+  <main>
+    <Image src={sunriseImage} alt="Sunrise by lake" width={800}/>
+  </main>
+  <Footer />
+</Layout>

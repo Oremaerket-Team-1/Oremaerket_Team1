@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+<section class="section_1">
+ <h1 class="h1">Gør dansk natur til dit førstevalg</h1>
+<div class="imgOgBi">
+
+  <img
+    src="/assets/SVG/fysisk_kort_mobil/bi_fysiskkort_mobil.svg"
+    alt="bi"
+  />
+
+  <img
+    src="/assets/img/dankort/cardfane.webp"
+    alt="dankort med nyt design"
+  />
+
+</div>
+<div class="p">
+<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Lorem ipsum
+
+ dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.   </p>
+</section>
+
+
+<section class="section2">
+      <img class="card1"
+    src="/assets/img/dankort/card1.webp"
+    alt="hånd betaler med Dankort"
+  />
+  <div>
+    <p class="p">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.</p>
+  </div>
+
+</section>
+
+</div>
+</Layout>
+
+<style>
+.card1{
+    margin: 40px;
+}
+
+
+
+
+
+.imgOgBi {
+  position: relative;
+
+  width: 320px;
+  height: 320px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SVG bagved */
+.imgOgBi img:first-child {
+  position: absolute;
+
+  width: 260px;
+
+  z-index: 1;
+
+}
+
+/* Webp foran */
+.imgOgBi img:last-child {
+  position: absolute;
+
+  width: 300px;
+
+  z-index: 2;
+
+  transform:
+    rotate(-20deg)
+    translate(20px, 20px);
+}
+</style>

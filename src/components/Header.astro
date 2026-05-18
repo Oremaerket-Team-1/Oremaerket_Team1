@@ -1,0 +1,177 @@
+---
+//@ts-nocheck
+---
+
+<header>
+  <div class="logo-wrapper">
+    <a href="index.astro">
+      <img
+        class="dklogo"
+        src="/assets/dk_logo_header.svg"
+        alt="dankort logo header"
+      />
+    </a>
+    <img class="maerketimg" src="/assets/maerket.svg" alt="øremærket logo" />
+  </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.astro">Forside</a></li>
+      <li><a href="counting.astro">Tæller</a></li>
+      <li><a href="filtering.astro">Hvad donerer vi til?</a></li>
+      <li><a href="physicalcard.astro">Fysiske dankort</a></li>
+    </ul>
+    <button aria-label="Navigation" class="burger">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+  </nav>
+</header>
+
+<style>
+  /*---------------- HEADER ----------------*/
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--dankort_graa_var3);
+  }
+
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo-wrapper img {
+    display: block;
+  }
+
+  .logo-wrapper .dklogo {
+    height: 50px;
+    width: auto;
+  }
+
+  .logo-wrapper .maerketimg {
+    height: 30px;
+  }
+  /* .logo-wrapper svg * {
+    fill: var(--bg-base);
+  } */
+
+  /* nav {
+    display: flex;
+    align-items: center;
+  } */
+
+  .menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    margin-right: 20px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu a {
+    font-family: "Raleway";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: uppercase;
+    /* display: block; */
+    padding: 10px;
+    color: var(--dankort-sort);
+    text-decoration: none;
+    transition: color 0.3s;
+    text-align: end;
+  }
+
+  .menu a:hover {
+    color: var(--dankort-roed);
+  }
+
+  .burger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    display: block;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .burger .line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--dankort-sort);
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
+
+  nav.active .menu {
+    display: block;
+    background-color: var(--bg-base);
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  nav.active .menu li {
+    margin: 10px 20px;
+  }
+
+  nav.active .menu a {
+    font-size: 24px;
+  }
+
+  .burger {
+    display: block;
+    background-color: transparent;
+    border: 0;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+  }
+  /* .burger {
+    display: none;
+  } */
+</style>
+
+<script>
+  //@ts-nocheck
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+
+  burger.addEventListener("click", burgerClick);
+  function burgerClick() {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+  }
+</script>

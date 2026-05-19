@@ -1,0 +1,60 @@
+<section>
+    <img src="/assets/img/index/butterfly.webp" alt="Sommerfugl i græs">
+    <div class="flex_p_ul">
+        <div>
+        <h2 class="h2">Fordele</h2>
+        <p class="p">Der er mange, som tror de betaler med Dankort på mobilen uden faktisk at gøre det. Kig efter Dankort logoet i din wallet - og tilføj dit Dankort hvis du endnu ikke har gjort det. <br>Der er nemlig flere fordele for dig og andre Danskere:</p>
+        </div>
+        <div>
+            
+        <ul class="p margin_left">
+            <li>Danske virksomheder har nemlig lavere udgifter, når de modtager din betaling. Det gør fx. at de kan sætte prisen lavere.</li>
+            <li>Dankort donerer i samarbejde med partnere penge hver gang du betaler, for at sikre vild og varig natur i Danmark.</li>
+            <li>Du bliver ikke pålagt gebyrer når du betaler med Dankort.</li>
+        </ul>
+        
+        </div>
+    </div>
+    </section>
+
+<style>
+
+     section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            
+        }
+
+    img {
+        border-radius: 20px;
+        width: 100%;
+    }
+
+    .flex_p_ul{
+        display: flex;
+        flex-direction: column;
+        gap: var(--S-); 
+    }
+
+    .margin_left li{
+        margin-left: 1rem;
+       
+        
+    }
+
+    @media (min-width: 800px)
+    {
+        section {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            
+        }
+
+        img {
+            width: 50%;
+        }
+    }
+    
+</style>

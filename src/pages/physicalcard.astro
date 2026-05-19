@@ -74,7 +74,8 @@ import Layout from "../layouts/Layout.astro";
 </section>
 
 <section class="section3">
-    <h2 class="h2">Tilføj design i wallet</h1>
+    <h2 class="h2">Tilføj design i wallet</h2>
+    <div class="guidetekst">
 <ol class="p">
 
   <li>
@@ -95,16 +96,18 @@ import Layout from "../layouts/Layout.astro";
     kortdesign opdateret med det samme i
     din wallet.
   </li>
-  <p class="wallet_link">
+</ol>
+  <p class="p">
   Se hvordan du får dit Dankort på mobilen her:
 </p>
 
 </ol>
+</div>
 
 
-</p><div class="knap_raev">
-        <button>Se guide her</button>
-<img
+<div class="knap_raev">
+        <button class="buttonguide">SE GUIDE HER</button>
+<img class="raev"
     src="/assets/SVG/fysisk_kort_mobil/raev_fysiskkort_desktop.svg"
     alt="håndtegnet ræv"
   />
@@ -133,12 +136,19 @@ import Layout from "../layouts/Layout.astro";
 
 
 </Layout>
-
 <style>
+
+
 /* /----- Mobil ----/ */
 
-.greas{
-    size:50%;
+
+.buttonguide {
+width: 184px;
+height: 59px;
+border-radius: 20px;
+color: var(--dankort-hvid);
+background: var(--dankort-roed);
+border: none;
 }
 
 .bi_mobil {
@@ -156,14 +166,13 @@ li{
 }
 
 
-
 .knap_raev {
   display: flex;
   align-items: center;
-  gap: 200px;
+  justify-content: space-between;
 }
 
-.knap_raev img {
+.raev {
   width: 60px;
   transform: translateY(40px);
 }
@@ -230,24 +239,40 @@ li{
 /* Webp foran */
 .imgOgBi img:last-child {
   position: absolute;
-  width: 300px;
+  width: 200px;
   z-index: 2;
   transform: translate(20px, 20px);
 }
+
+.greas {
+  display: none;
+}
+
+
 /* -------- desktop ----------------- */
 
 
 @media (min-width: 1024px) {
+  .greas {
+    display: block;
+  }
 
-/* .bi_mobil {
+.bi_mobil {
     display: none;
   }
 .bi_desktop {
     display: block;
-    margin: var(--L-) auto;
-  }
-} */
 
+  }
+  .bi {
+  width: clamp(
+    100px,
+    25vw,
+    600px
+  ); 
+
+  height: auto;
+}
 
   /* ---------- KORT SECTION ---------- */
 
@@ -256,7 +281,7 @@ li{
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
-    /* margin: 80px auto 0; */
+    margin-top: var(--M-);
   }
 
   .section2 img {
@@ -277,6 +302,7 @@ li{
     column-gap: 50px;
     align-items: start;
     max-width: 1200px;
+    margin-top: var(--XL-);
   
 
    
@@ -345,6 +371,7 @@ li{
     column-gap: 20px;
     align-items: start;
     max-width: 1200px;
+    margin-top: var(--L-);
   }
 
   .section_1 .h1,
@@ -378,7 +405,7 @@ li{
     left: 40px;
     z-index: 1;
   }
-
- 
 }
+
+</style>
 

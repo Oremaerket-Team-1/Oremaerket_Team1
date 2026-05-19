@@ -48,7 +48,7 @@ html {
   font-style: normal;
   font-weight: 800;
   line-height: normal;
-  margin-bottom: 20px;
+  margin-bottom: var(--S-);
 }
 
 .h2 {
@@ -58,7 +58,7 @@ html {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-bottom: 20px;
+  margin-bottom: var(--S-);
 }
 
 .h3 {
@@ -68,7 +68,7 @@ html {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-bottom: 20px;
+  margin-bottom: var(--S-);
 }
 
 .h4 {
@@ -78,7 +78,7 @@ html {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-bottom: 20px;
+  margin-bottom: var(--S-);
 }
 
 .p {
@@ -87,7 +87,8 @@ html {
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px;
+  line-height: var(--S-);
+  max-width: 65ch;
 }
 
 @media (min-width: 800px) {

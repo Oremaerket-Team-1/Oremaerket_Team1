@@ -2,46 +2,51 @@
 
 ---
 
-<div class="partneretekst">
-  <h2 class="h2">Partnere</h2>
-  <p class="p">
-    Som del af initiativet har Dankort indgået samarbejdsaftaler med et stadig
-    voksende antal af Danmarks banker og butikker.
-  </p>
-  <ul class="partnerliste">
-    <li class="p">
-      Partnerbankerne donerer 1 øre pr. gennemført betaling, hvis Dankortet er
-      udstedt af den pågældende bank.
-    </li>
-    <li class="p">
-      Partnerbutikkerne donerer 1 øre pr. gennemført betaling med Dankort i
-      deres fysiske forretninger, selvbetjeningsløsninger eller webshop.
-    </li>
-  </ul>
-  <p class="p">
-    Det betyder altså, at der kan doneres op til 3 øre når du bruger dit
-    Dankort. 1 øre fra Dankort, 1 øre fra din bank og 1 øre fra dem du handler
-    hos.
-  </p>
-  <p class="p">
-    Hvis betalingen foregår i en butik der ikke er partner, med et kort fra en
-    bank der ikke er partner, så donerer Dankort stadig 1 øre.
-  </p>
-</div>
-<div>
-  <img
-    class="enplusenmobil"
-    src="assets/SVG/clickable_mobil/1plus1_counting_mobil.svg"
-    alt="partnerbreakdown"
-  />
-  <img
-    class="enplusendesktop"
-    src="assets/SVG/clickable_desktop/1plus1_counting_desktop.svg"
-    alt="partnerbreakdowndesktop"
-  />
+<div class="section2">
+  <div class="partneretekst grid_1-1">
+    <h2 class="h2">Partnere</h2>
+    <p class="p">
+      Som del af initiativet har Dankort indgået samarbejdsaftaler med et stadig
+      voksende antal af Danmarks banker og butikker.
+    </p>
+    <ul class="partnerliste">
+      <li class="p">
+        Partnerbankerne donerer 1 øre pr. gennemført betaling, hvis Dankortet er
+        udstedt af den pågældende bank.
+      </li>
+      <br />
+      <li class="p">
+        Partnerbutikkerne donerer 1 øre pr. gennemført betaling med Dankort i
+        deres fysiske forretninger, selvbetjeningsløsninger eller webshop.
+      </li>
+    </ul>
+    <div class="partnerbillede">
+      <img
+        class="enplusenmobil"
+        src="assets/SVG/clickable_mobil/1plus1_counting_mobil.svg"
+        alt="partnerbreakdown"
+      />
+      <img
+        class="enplusendesktop"
+        src="assets/SVG/clickable_desktop/1plus1_counting_desktop.svg"
+        alt="partnerbreakdowndesktop"
+      />
+    </div>
+    <p class="p">
+      Det betyder altså, at der kan doneres op til 3 øre når du bruger dit
+      Dankort. 1 øre fra Dankort, 1 øre fra din bank og 1 øre fra dem du handler
+      hos.
+      <br />
+      Hvis betalingen foregår i en butik der ikke er partner, med et kort fra en bank
+      der ikke er partner, så donerer Dankort stadig 1 øre.
+    </p>
+  </div>
 </div>
 
 <style>
+  .section2 {
+    margin-bottom: var(--XL-);
+  }
   .partnerliste {
     padding-left: var(--S-);
   }
@@ -53,13 +58,33 @@
   .enplusenmobil {
     display: block;
     margin: var(--S-) auto;
+    padding: var(--S-);
   }
 
   .enplusendesktop {
     display: none;
+    padding: var(--S-);
   }
 
   @media (min-width: 800px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: var(--L-);
+    }
+
+    .partneretekst > h2,
+    .partneretekst > p,
+    .partneretekst > ul {
+      grid-column: 1 / 2;
+    }
+
+    .partnerbillede {
+      grid-column: 2 / 3;
+      grid-row: 1 / 5;
+      align-self: center;
+    }
+
     .enplusenmobil {
       display: none;
     }
@@ -67,6 +92,7 @@
     .enplusendesktop {
       display: block;
       margin: var(--L-) auto;
+      padding: var(--S-);
     }
   }
 </style>

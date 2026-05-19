@@ -1,17 +1,46 @@
 ---
+//@ts-nocheck
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import { Image } from "astro:assets";
-import sunriseImage from "../../public/assets/img/filtering/sunrise.webp"
+import sunriseImage from "../Image/sunrise.webp";
+import Button_Filtering from "../components/Button_Filtering.astro";
+import Card from "../components/Card.astro";
+const endpoint = "https://uigtgwaojslfwhlxfbfn.supabase.co/rest/v1/Dankort"
+const key = "sb_publishable_DddfZPvMIKUo6VRZTKBaMg_KaVqL-hm"
+
+const options={
+   headers: 
+   {apikey: key,},
+}
+
+const data = await fetch(endpoint, options).then((responsive) => responsive.json());
+console.log(data);
 ---
 
 
-
 <Layout>
-  <Header />
-  <main>
-    <Image src={sunriseImage} alt="Sunrise by lake" width={800}/>
-  </main>
-  <Footer />
+    <Image src={sunriseImage} alt="Sunrise by lake" class="sunriseimg"/>
+     <h1 class="h1"> En øre til naturen, 
+når du betaler med Dankort</h1>
+<p class="p"> Et nyt, stort samarbejde mellem Dankort og Den Danske Naturfond betyder, at der går 1 øre til mere natur hver gang, du bruger dit Dankort. Det giver mange millioner kroner ekstra til naturen de kommende år.</p>
+<p class="p">De første naturarealer er allerede sikret. Mere plads til naturen er vigtig for at vende klima- og biodiversitetskrisen og skabe en grønnere og rigere fremtid for kommende generationer i Danmark.</p>
+<h2 class="h2">Her har vi doneret til den danske natur</h2>
+<Button_Filtering title="RYD FILTER"></Button_Filtering>
+<Button_Filtering title="JYLLAND"></Button_Filtering>
+<Button_Filtering title="FYN"></Button_Filtering>
+<Button_Filtering title="LOLLAND"></Button_Filtering>
+<Button_Filtering title="FALSTER"></Button_Filtering>
+<Button_Filtering title="BORNHOLM"></Button_Filtering>
+<Button_Filtering title="SJÆLLAND"></Button_Filtering>
+<section>
+  {data.map((Dankort) => <Card {Dankort} />)}
+</section>
 </Layout>
+
+<style>
+  .sunriseimg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+</style>

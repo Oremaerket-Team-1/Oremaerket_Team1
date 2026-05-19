@@ -4,56 +4,174 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
 <section class="section_1">
- <h1 class="h1">Gør dansk natur til dit førstevalg</h1>
-<div class="imgOgBi">
 
-  <img
-    src="/assets/SVG/fysisk_kort_mobil/bi_fysiskkort_mobil.svg"
-    alt="bi"
-  />
+  <h1 class="h1">
+    Gør dansk natur til dit førstevalg
+  </h1>
 
-  <img
-    src="/assets/img/dankort/cardfane.webp"
-    alt="dankort med nyt design"
-  />
+  <div class="imgOgBi">
 
-</div>
-<div class="p">
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Lorem ipsum
+    <img
+      src="/assets/SVG/fysisk_kort_mobil/bi_fysiskkort_mobil.svg"
+      alt="bi"
+    />
 
- dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.   </p>
-</section>
+    <img
+      src="/assets/img/dankort/cardfane.webp"
+      alt="dankort med nyt design"
+    />
 
+  </div>
 
-<section class="section2">
-      <img class="card1"
-    src="/assets/img/dankort/card1.webp"
-    alt="hånd betaler med Dankort"
-  />
-  <div>
-    <p class="p">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.</p>
+  <div class="p">
+    
+<p class="p">
+  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+  Quisque faucibus ex sapien vitae pellentesque sem placerat.
+  In id cursus mi pretium tellus duis convallis.
+  <br><br>
+  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+  Quisque faucibus ex sapien vitae pellentesque sem placerat.
+  In id cursus mi pretium tellus duis convallis.
+</p>
+
+  </div>
+
+  <div class="greas">
+    <img
+      src="/assets/SVG/fysisk_kort_desktop/graes_fysiskkort_desktop.svg"
+      alt="håndtegnet græs"
+    >
   </div>
 
 </section>
+</div>
+
+<section class="section2">
+      <img
+    src="/assets/img/dankort/card1.webp"
+    alt="hånd betaler med Dankort"
+  />
+
+      <img
+    src="/assets/img/dankort/card2.webp"
+    alt="Dankort med regnbue billede"
+  />
+
+  <img
+    src="/assets/img/dankort/card3.webp"
+    alt="Dankort med regnbue billede"
+  />
+
+</section>
+
+<section class="section3">
+    <h1 class="h1">Apple pay</h1>
+<p class="p">
+  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+  Quisque faucibus ex sapien vitae pellentesque sem placerat.
+  In id cursus mi pretium tellus duis convallis.
+  <br><br>
+  Lorem ipsum dolor sit amet consectetur adipiscing elit.
+  Quisque faucibus ex sapien vitae pellentesque sem placerat.
+  In id cursus mi pretium tellus duis convallis.
+</p><div class="knap_raev">
+        <button>Se guide her</button>
+<img
+    src="/assets/SVG/fysisk_kort_mobil/raev_fysiskkort_desktop.svg"
+    alt="håndtegnet ræv"
+  />
+  </div>
+<div class="frameAndImg">
+
+  <img
+    class="frame"
+    src="/assets/SVG/fysisk_kort_mobil/frame_fysiskkort_mobil.svg"
+    alt="ramme"
+  />
+
+  <img
+    class="applepay"
+    src="/assets/img/dankort/applepay.webp"
+    alt="Applepay"
+  />
 
 </div>
+
+</section>
+    
+
+
+
+
+
 </Layout>
 
 <style>
-.card1{
-    margin: 40px;
+/* /----- Mobil ----/ */
+
+.greas img{
+    visibility: 0%;
 }
 
 
+.knap_raev {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+}
+
+.knap_raev img {
+  width: 60px;
+  transform: translateY(40px);
+}
 
 
+.frameAndImg {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+/* Frame bagved */
+.frame {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Applepay foran */
+.applepay {
+ position: relative;
+  width: 250px;
+  top: 46%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+
+.section2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section2 img {
+  width: 290px;
+  display: block;
+  margin: 0 auto;
+}
 
 .imgOgBi {
   position: relative;
-
   width: 320px;
   height: 320px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,9 +180,7 @@ import Layout from "../layouts/Layout.astro";
 /* SVG bagved */
 .imgOgBi img:first-child {
   position: absolute;
-
   width: 260px;
-
   z-index: 1;
 
 }
@@ -72,13 +188,146 @@ import Layout from "../layouts/Layout.astro";
 /* Webp foran */
 .imgOgBi img:last-child {
   position: absolute;
-
   width: 300px;
-
   z-index: 2;
-
   transform:
-    rotate(-20deg)
+
     translate(20px, 20px);
 }
-</style>
+/* -------- desktop ----------------- */
+
+
+@media (min-width: 1024px) {
+
+  /* ---------- KORT SECTION ---------- */
+
+  .section2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 80px auto 0;
+  }
+
+  .section2 img {
+    width: 100%;
+    display: block;
+  }
+
+  /* ---------- APPLE PAY SECTION ---------- */
+
+  .section3 {
+    display: grid;
+
+    grid-template-columns: 500px 1fr;
+
+    grid-template-areas:
+      "image title"
+      "image text"
+      "image button";
+
+    column-gap: 50px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 120px auto 0;
+  }
+
+  /* VENSTRE SIDE */
+
+  .frameAndImg {
+    grid-area: image;
+    position: relative;
+    width: 420px;
+    height: 420px;
+    margin-top: 0;
+  }
+
+  .frame {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .applepay {
+    position: absolute;
+    width: 303px;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  /* HØJRE SIDE */
+
+  .section3 .h1 {
+    grid-area: title;
+  }
+
+  .section3 .p {
+    grid-area: text;
+    max-width: 600px;
+  }
+
+  .knap_raev {
+    grid-area: button;
+    display: flex;
+    align-items: center;
+    gap: 260px;
+    margin-top: 40px;
+  }
+
+  .knap_raev img {
+    width: 90px;
+    transform: translateY(30px);
+  }
+
+  /* ---------- SECTION 1 ---------- */
+
+  .section_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    align-items: start;
+    max-width: 1200px;
+    margin-left: 120px;
+    margin-r: 120px;
+  }
+
+  .section_1 .h1,
+  .section_1 .p,
+  .greas {
+    grid-column: 1;
+  }
+
+  .section_1 .p {
+    max-width: 600px;
+  }
+
+.greas {
+  grid-column: 1;
+  justify-self: end;
+}
+
+  .imgOgBi {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    position: relative;
+    width: 690px;
+    height: 500px;
+    justify-self: end;
+  }
+
+  .imgOgBi img:first-child {
+    position: absolute;
+    width:100%;
+    top: 20px;
+    left: 40px;
+    z-index: 1;
+  }
+
+ 
+}
+

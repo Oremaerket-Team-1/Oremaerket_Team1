@@ -3,29 +3,30 @@
 ---
 
 <header>
-  <div class="logo-wrapper">
-    <a href="index.astro">
-      <img
-        class="dklogo"
-        src="/assets/dk_logo_header.svg"
-        alt="dankort logo header"
-      />
-    </a>
-    <img class="maerketimg" src="/assets/maerket.svg" alt="øremærket logo" />
+  <div class="marginheader">
+    <div class="logo-wrapper">
+      <a href="/">
+        <img
+          class="dklogo"
+          src="/assets/dk_logo_header.svg"
+          alt="dankort logo header"
+        />
+      </a>
+      <img class="maerketimg" src="/assets/maerket.svg" alt="øremærket logo" />
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="/counting">Tæller</a></li>
+        <li><a href="/filtering">Hvad donerer vi til?</a></li>
+        <li><a href="/physicalcard">Fysiske dankort</a></li>
+      </ul>
+      <button aria-label="Navigation" class="burger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </nav>
   </div>
-  <nav>
-    <ul class="menu">
-      <li><a href="/index">Forside</a></li>
-      <li><a href="/counting">Tæller</a></li>
-      <li><a href="/filtering">Hvad donerer vi til?</a></li>
-      <li><a href="/physicalcard">Fysiske dankort</a></li>
-    </ul>
-    <button aria-label="Navigation" class="burger">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-    </button>
-  </nav>
 </header>
 
 <style>
@@ -35,10 +36,10 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
+    align-items: center; */
+    padding: 15px var(--S-);
     background-color: var(--dankort_graa_var3);
   }
 
@@ -58,7 +59,7 @@
   }
 
   .logo-wrapper .maerketimg {
-    height: 30px;
+    height: var(--M-);
   }
   /* .logo-wrapper svg * {
     fill: var(--bg-base);
@@ -125,15 +126,15 @@
     display: block;
     background-color: var(--bg-base);
     position: absolute;
-    top: 94px;
+    top: 80px;
     left: 0;
     width: 100%;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 var(--XS-) var(--XS-) rgba(0, 0, 0, 0.1);
     z-index: 1;
   }
 
   nav.active .menu li {
-    margin: 10px 20px;
+    margin: var(--XS-) var(--S-);
   }
 
   nav.active .menu a {
@@ -162,6 +163,19 @@
   /* .burger {
     display: none;
   } */
+
+  .marginheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 var(--S-);
+  }
+
+  @media (min-width: 800px) {
+    .marginheader {
+      margin: 0 var(--XXL-);
+    }
+  }
 </style>
 
 <script>

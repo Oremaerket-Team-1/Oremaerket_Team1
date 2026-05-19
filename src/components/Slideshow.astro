@@ -8,16 +8,52 @@ const slides = [
 ];
 ---
 
-<div class="slideshow">
-  {slides.map((src) => <img src={src} alt="slideshow" class="slide" />)}
+<div class="section1">
+  <div>
+    <div class="slideshow">
+      {slides.map((src) => <img src={src} alt="slideshow" class="slide" />)}
+    </div>
+  </div>
+  <div>
+    <div class="grid_graes">
+      <h1 class="h1">Om Dankort Øremærket</h1>
+      <img
+        class="graes"
+        src="assets/SVG/clickable_mobil/graes_counting_mobil.svg"
+        alt="græs illustration"
+      />
+    </div>
+    <div>
+      <p class="p">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus
+        ex sapien vitae pellentesque sem placerat. In id cursus mi pretium
+        tellus duis convallis. Lorem ipsum dolor sit amet consectetur adipiscing
+        elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id
+        cursus mi pretium tellus duis convallis.
+      </p>
+    </div>
+  </div>
 </div>
 
 <style>
+  .grid_graes {
+    display: flex;
+  }
+
+  .graes {
+    position: absolute;
+    right: var(--S-);
+  }
+
+  /* SLIDESHOW CSS */
+
   .slideshow {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
+    border-radius: var(--S-);
+    margin-bottom: var(--S-);
   }
 
   .slide {
@@ -63,5 +99,16 @@ const slides = [
     100% {
       opacity: 0;
     }
+  }
+
+  @media (min-width: 800px) {
+    .section1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .section1 {
+    margin-bottom: var(--L-);
   }
 </style>

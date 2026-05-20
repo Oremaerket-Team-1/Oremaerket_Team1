@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import butterfly from "../Image/butterfly_field.webp";
 
+
 ---
 
 
@@ -27,6 +28,7 @@ import butterfly from "../Image/butterfly_field.webp";
     <div class="flex_bee-1">
 
    <img src="/assets/SVG/index_mobil/bi_traeer_index_mobil.svg" alt="illustration af bi" class="bee-1">
+   <img src="/assets/SVG/index_mobil/bi_traeer_index_mobil.svg" alt="illustration af bi" class="bee-2">
    </div>
     </section>
 
@@ -43,16 +45,22 @@ import butterfly from "../Image/butterfly_field.webp";
         border-radius: 20px;
         max-width: 100%;
         height: auto;
+
     }
 
     .bee_1 {
         width: 150px;
+        display: block;
+    }
+
+    .bee-2 {
+        display: none;
     }
 
     .flex_bee-1 {
         display: flex;
         flex-direction: row;
-        justify-content:flex-end;
+        justify-content: flex-end;
       
        
 
@@ -70,6 +78,11 @@ import butterfly from "../Image/butterfly_field.webp";
         
     }
 
+    section {
+        margin-top: var(--M-);
+        max-width: 100%;
+    }
+
     @media (min-width: 800px) {
     
       
@@ -78,6 +91,22 @@ import butterfly from "../Image/butterfly_field.webp";
             flex-direction: row;
             gap: 4rem;
             
+        }
+
+        .butterfly {
+            max-width: 50%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .bee-1 {
+            display: none;
+        
+        }
+
+        .bee-2 {
+            display: block;
+            width: 300px;
         }
 
         

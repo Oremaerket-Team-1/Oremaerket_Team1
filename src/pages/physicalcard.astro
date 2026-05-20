@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+
+
 ---
 
 <Layout>
@@ -106,7 +109,7 @@ import Layout from "../layouts/Layout.astro";
 
 
 <div class="knap_raev">
-        <button class="buttonguide">SE GUIDE HER</button>
+       <Button title="SE GUIDE HER"></Button>
 <img class="raev"
     src="/assets/SVG/fysisk_kort_mobil/raev_fysiskkort_desktop.svg"
     alt="håndtegnet ræv"
@@ -141,15 +144,6 @@ import Layout from "../layouts/Layout.astro";
 
 /* /----- Mobil ----/ */
 
-
-.buttonguide {
-width: 184px;
-height: 59px;
-border-radius: 20px;
-color: var(--dankort-hvid);
-background: var(--dankort-roed);
-border: none;
-}
 
 .bi_mobil {
   display: block;

@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import sunrise from "../Image/sunrise.webp";
+---
+
+
+<section>
+    <div class="flex_h2_carousel">
+    <h2 class="h2">Sådan gør du</h2>
+    <div class="grid_carousel_illustation">
+    <div class="carousel_container">
+        <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
+         <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
+          <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
+    </div>
+    
+    
+
+    
+    
+    <img src="/assets/SVG/index_mobil/to_traeer_index_mobil.svg" alt="illustration af to træer" class="treesmobile">
+    <img src="/assets/SVG/index_desktop/to_traeer_index_desktop.svg" alt="illustration af træer" class="treesdesktop">
+    </div>
+</div>
+</section>
+
+
+<style>
+
+    section {
+        margin-top: var(--M-);
+    }
+
+    .flex_h2_carousel {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .carousel_container {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    
+    }
+
+    .treesmobile {
+    display: block;
+   
+    margin-left: auto;
+    }
+
+.treesdesktop {
+    display: none;
+}
+
+
+.guide_graphic {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+ @media (min-width: 800px) {
+
+    .grid_carousel_illustation {
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        gap: 2rem;
+    }
+
+    .treesmobile {
+        display: none;
+    }
+
+    .treesdesktop {
+        display: flex;
+        flex-direction: row;
+        align-self: end;
+        margin-bottom: 1rem;
+        max-width: 136px;
+        height: auto;
+        
+
+    
+
+
+ }
+
+
+</style>

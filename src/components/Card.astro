@@ -2,21 +2,48 @@
 const { Dankort } = Astro.props;
 ---
 
-<article><h2 class="h2">{Dankort.place}</h2>
+<article><h4 class="h4">{Dankort.place}</h4>
+    <div class="img-place">
     <img src={Dankort.image} alt="naturområderne i Danmark">
+    <div class="overlay"></div>
+    </div>
     <a href={Dankort.link}>
-    <button>LÆS MERE</button>
     </a>
     
 </article>
 
 <style>
     article{
-        padding: 2rem;
+       margin: 0 auto;
+       position: relative;
     }
+
+    h4 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--dankort-hvid);
+        margin: 0.8rem 1rem;
+        z-index: 3;
+    }
+
+    .overlay {
+        position: absolute;
+    inset: 0;   /* Shortcut for setting all four sides top,right,bottom,left */
+    border-radius: 20px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 12%,
+      rgba(30, 30, 30, 0.5) 22%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+    }
+
+
     img {
-        border-radius: 20px;
-        max-height: 320px;
-        max-width: 320px;
-    }
+    border-radius: 20px;
+    max-width: 232px;
+    z-index: 1;
+        }
 </style>

@@ -10,20 +10,14 @@ import sunrise from "../Image/sunrise.webp";
     <div class="grid_carousel_illustation">
     <div class="carousel_container">
         <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
-         <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
-          <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
+        <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
+        <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
     </div>
-    
-    
-
-    
-    
     <img src="/assets/SVG/index_mobil/to_traeer_index_mobil.svg" alt="illustration af to træer" class="treesmobile">
     <img src="/assets/SVG/index_desktop/to_traeer_index_desktop.svg" alt="illustration af træer" class="treesdesktop">
     </div>
 </div>
 </section>
-
 
 <style>
 
@@ -38,12 +32,21 @@ import sunrise from "../Image/sunrise.webp";
     }
 
     .carousel_container {
-        display: flex;
+        /* display: flex;
         flex-direction: row;
-        gap: 2rem;
         overflow-x: auto;
-        padding-bottom: 1rem;
-    
+        padding-bottom: 1rem; */
+
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        overflow-x: auto;
+        gap: 2rem;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carousel_container::-webkit-scrollbar { 
+        display: none;
     }
 
     .treesmobile {
@@ -58,10 +61,12 @@ import sunrise from "../Image/sunrise.webp";
 
 
 .guide_graphic {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 20px;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
 }
 
  @media (min-width: 800px) {
@@ -81,14 +86,10 @@ import sunrise from "../Image/sunrise.webp";
         flex-direction: row;
         align-self: end;
         margin-bottom: 1rem;
-        max-width: 136px;
+        max-width: 130px;
         height: auto;
         
-
-    
-
+    }
 
  }
-
-
 </style>

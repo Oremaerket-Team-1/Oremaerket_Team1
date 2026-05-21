@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import sunriseImage from "../Image/sunrise.webp";
+--- 
+    <section>
+        <div>
+<Image src={sunriseImage} alt="Sunrise by lake" class="sunriseimg"/>
+</div>
+<div class="text-filtering">
+<h1 class="h1"> En øre til naturen, <br> når du betaler med Dankort</h1>
+<p class="p"> Et nyt, stort samarbejde mellem Dankort og Den Danske Naturfond betyder, at der går 1 øre til mere natur hver gang, du bruger dit Dankort. Det giver mange millioner kroner ekstra til naturen de kommende år.</p>
+<p class="p">De første naturarealer er allerede sikret. Mere plads til naturen er vigtig for at vende klima- og biodiversitetskrisen og skabe en grønnere og rigere fremtid for kommende generationer i Danmark.</p></div></section>
+
+<style>
+p {
+  margin-bottom: var(--S-);
+}
+
+.sunriseimg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: var(--XS-);
+    margin-bottom: var(--M-);
+  }
+
+
+         @media (min-width: 800px) {
+
+            section {
+                display: flex;
+                flex-direction: row-reverse;
+                gap: var(--XXL-);
+            }
+        }
+</style>

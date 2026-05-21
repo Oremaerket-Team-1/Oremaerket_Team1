@@ -1,9 +1,8 @@
 ---
 //@ts-nocheck
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import sunriseImage from "../Image/sunrise.webp";
 import Button_Filtering from "../components/Button_Filtering.astro";
+import Sec1Filtering from "../components/Sec1filtering.astro";
 import Card from "../components/Card.astro";
 const endpoint = "https://uigtgwaojslfwhlxfbfn.supabase.co/rest/v1/Dankort"
 const key = "sb_publishable_DddfZPvMIKUo6VRZTKBaMg_KaVqL-hm"
@@ -21,17 +20,11 @@ console.log(data);
 
 
 <Layout>
-    <Image src={sunriseImage} alt="Sunrise by lake" class="sunriseimg"/>
-     <h1 class="h1"> En øre til naturen, 
-når du betaler med Dankort</h1>
-<p class="p"> Et nyt, stort samarbejde mellem Dankort og Den Danske Naturfond betyder, at der går 1 øre til mere natur hver gang, du bruger dit Dankort. Det giver mange millioner kroner ekstra til naturen de kommende år.</p>
-<p class="p">De første naturarealer er allerede sikret. Mere plads til naturen er vigtig for at vende klima- og biodiversitetskrisen og skabe en grønnere og rigere fremtid for kommende generationer i Danmark.</p>
-<h2 class="h2">Her har vi doneret til den danske natur</h2>
+  <Sec1Filtering></Sec1Filtering>
+  <h2 class="h2">Her har vi doneret til <br> den danske natur</h2>
   <div class="buttons">
-    <div class="filter">
-<Button_Filtering title="RYD FILTER"></Button_Filtering>
-</div>
-<div class="places">
+    <Button_Filtering title="RYD FILTER" />
+  <div class="places">
 <Button_Filtering title="JYLLAND"></Button_Filtering>
 <Button_Filtering title="FYN"></Button_Filtering>
 <Button_Filtering title="LOLLAND"></Button_Filtering>
@@ -72,38 +65,53 @@ justify-content: center;
 margin-bottom: 0.5rem;
 }
 
-  .sunriseimg {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    margin-top: var(--XS-);
-    margin-bottom: var(--M-);
-  }
-
   .card {
     display: grid;
-    gap: 18px;
+    grid-template-columns: 1fr;
+    gap: var(--S-);
     margin-bottom: var(--S-);
   }
-
-  .filter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: var(--XS-);
-  }
-
 .buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--XS-);
+  margin-top: var(--XS-);
+  margin-bottom: var(--S-);
+}
+
+.filter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .places {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-bottom: var(--S-);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--XS-);
 }
+
+
+  @media (min-width: 800px) {
+     .buttons {
+    flex-direction: row;
+    gap: var(--XXS-);
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+
+  .filter {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+
+  .card {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+ gap: var(--M-);
+  }
+  }
 </style>

@@ -77,31 +77,17 @@ button:hover {
     z-index: 1;
         }
 
-        .svgimg {
+        article .svgimg {
             width: 100%;
             align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .svgimg:hover {
             opacity: 1;
-             animation: animateDash 2s linear forwards infinite;
+            clip-path: inset(0 0 100% 0); 
+            transition: clip-path 3s ease-in-out;
         }
 
-        @keyframes animateDash {
-	0%,
-	0%,
-	0% {
-		opacity: 0;
-	}
-
-	25%,
-	75%,
-    100% {
-		opacity: 1;
-	}
-}
+         article:hover .svgimg {
+             clip-path: inset(0 0 0% 0);
+        }
 
         
 

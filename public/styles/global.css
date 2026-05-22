@@ -9,16 +9,6 @@ body {
   background-color: var(--bg-base);
 }
 
-main {
-  margin: 0 var(--S-);
-}
-
-@media (min-width: 800px) {
-  main {
-    margin: 0 120px;
-  }
-}
-
 /*-------------------- VARIABLER ----------------------- */
 
 /*-------------------- FARVER ----------------------- */

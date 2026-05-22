@@ -2,7 +2,7 @@
 
 ---
 
-<div class="section4 grid_1-1 ">
+<div class="section4 grid_1-1 margin_new ">
   <div>
     <svg
       class="pindsvin"
@@ -153,10 +153,20 @@
   }
 
   .section4 {
-    margin-bottom: var(--XL-);
+    margin-bottom: var(--XXL-);
   }
 
-  @media (min-width: 800px) {
+  .margin_new {
+  margin: 0 var(--S-);
+   margin-bottom: var(--XL-);
+  }
+
+@media (min-width: 800px) {
+
+    .margin_new {
+    margin: 0 var(--XXL-);
+    margin-bottom: var(--XXL-);
+  }
     .grid_1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr;

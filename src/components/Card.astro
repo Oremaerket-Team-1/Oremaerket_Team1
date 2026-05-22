@@ -4,11 +4,10 @@ const { Dankort } = Astro.props;
 
 <article><h4 class="h4">{Dankort.place}</h4>
     <div class="img-place">
-            
-    <img src={Dankort.image} alt="naturområderne i Danmark">
+    <img src={Dankort.image} alt="naturområderne i Danmark" class="natureimg">
     <div class="overlay">
+         <img src={Dankort.svg} alt="svg animation" class="svgimg">
     </div>
-
     <a href={Dankort.link} target="_blank">
       <button class="p">LÆS MERE</button></a>
     
@@ -65,21 +64,49 @@ button:hover {
 
     .overlay:hover {
         background: none;
-        transition: ease-in 10ms;
     }
     
-    img {
+    .natureimg {
     border-radius: 20px;
     max-width: 293px;
     z-index: 1;
         }
 
+        .svgimg {
+            position: absolute;
+            width: 100%;
+            left: -1%;
+            top: 13%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .svgimg:hover {
+            opacity: 1;
+             animation: animateDash 2s linear forwards infinite;
+        }
+
+        @keyframes animateDash {
+	0%,
+	0%,
+	0% {
+		opacity: 0;
+	}
+
+	25%,
+	75%,
+    100% {
+		opacity: 1;
+	}
+}
+
+        
+
          @media (min-width: 800px) {
-            img {
+            .natureimg {
                 max-width: 100%;
             }
-
-              button {
+button {
   left: 50%;
   bottom: 8%;
   font-weight: 700;

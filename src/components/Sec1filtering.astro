@@ -35,9 +35,20 @@ import sunriseImage from "../Image/sunrise.webp";
 <div class="text-filtering">
 <h1 class="h1"> En øre til naturen,<br>når du betaler med Dankort</h1>
 <p class="p"> Et nyt, stort samarbejde mellem Dankort og Den Danske Naturfond betyder, at der går 1 øre til mere natur hver gang, du bruger dit Dankort. Det giver mange millioner kroner ekstra til naturen de kommende år.</p>
-<p class="p">De første naturarealer er allerede sikret. Mere plads til naturen er vigtig for at vende klima- og biodiversitetskrisen og skabe en grønnere og rigere fremtid for kommende generationer i Danmark.</p></div></section>
+<p class="p">De første naturarealer er allerede sikret. Mere plads til naturen er vigtig for at vende klima- og biodiversitetskrisen og skabe en grønnere og rigere fremtid for kommende generationer i Danmark.</p></div> <h2 class="h2">Her har vi doneret til <br> den danske natur</h2></section>
 
 <style>
+
+.beesvg {
+    display:none;
+}
+
+section {
+       margin-top: var(--M-);
+        max-width: 100%;
+        margin: 0 var(--S-);
+}
+
 p {
   margin-bottom: var(--S-);
   max-width: 490px;
@@ -57,6 +68,7 @@ p {
             section {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                margin: 0 120px;
                 margin-top: var(--XL-);
                 gap: var(--XXL-);
                 z-index: 2;
@@ -75,8 +87,9 @@ p {
             .beesvg {
                 position: absolute;
                 z-index: 1;
-                transform: translateX(-90%);
-                top: 55%;
+                transform: translateX(-30%);
+                top: 60%;
+                display: block;
 
             }
 

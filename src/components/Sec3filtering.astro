@@ -12,6 +12,13 @@
 </section>
 
 <style>
+
+section {
+     margin-top: var(--M-);
+        max-width: 100%;
+        margin: 0 var(--S-);
+}
+
   .seestroke {
   display: flex;
   align-items: center;
@@ -25,4 +32,10 @@ align-items: center;
 justify-content: center;
 margin-bottom: 0.5rem;
 }
+
+ @media (min-width: 800px) {
+  section {
+    margin: 0 120px;
+  }
+ }
 </style>

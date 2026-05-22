@@ -23,7 +23,6 @@ console.log(data);
 
 <Layout>
   <Sec1Filtering></Sec1Filtering>
-  <h2 class="h2">Her har vi doneret til <br> den danske natur</h2>
   <div class="buttons">
     <Button_Filtering title="RYD FILTER" />
   <div class="places">
@@ -42,6 +41,11 @@ console.log(data);
 </Layout>
 
 <style>
+
+  section{
+       margin-top: var(--M-);
+        margin: 0 var(--S-);
+  }
 p {
   margin-bottom: var(--S-);
 }
@@ -63,7 +67,7 @@ margin-bottom: 0.5rem;
   .card {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--S-);
+    gap: var(--L-);
     margin-bottom: var(--S-);
   }
 .buttons {
@@ -73,6 +77,9 @@ margin-bottom: 0.5rem;
   gap: var(--XS-);
   margin-top: var(--XS-);
   margin-bottom: var(--S-);
+  margin-top: var(--M-);
+  max-width: 100%;
+  margin: 0 var(--S-);
 }
 
 .filter {
@@ -90,11 +97,16 @@ margin-bottom: 0.5rem;
 
 
   @media (min-width: 800px) {
+
+    section {
+      margin: 0 120px;
+        margin-top: 0px;
+    }
      .buttons {
     flex-direction: row;
-    gap: var(--XXS-);
     flex-wrap: wrap;
     justify-content: start;
+    margin: 0 120px;
   }
 
   .filter {
@@ -104,9 +116,9 @@ margin-bottom: 0.5rem;
 }
 
   .card {
- display: grid;
  grid-template-columns: repeat(3, 1fr);
- gap: var(--M-);
+ grid-template-rows: auto;
+
   }
   }
 </style>

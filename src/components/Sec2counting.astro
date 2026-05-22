@@ -2,7 +2,7 @@
 
 ---
 
-<div class="section2">
+<div class="section2 margin_new">
   <div class="partneretekst grid_1-1">
     <h2 class="h2">Partnere</h2>
     <p class="p">
@@ -66,7 +66,15 @@
     padding: var(--S-);
   }
 
+  .margin_new {
+    margin: 0 var(--S-);
+  }
+
   @media (min-width: 800px) {
+
+     .margin_new {
+    margin: 0 var(--XXL-);
+  }
     .grid_1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr;

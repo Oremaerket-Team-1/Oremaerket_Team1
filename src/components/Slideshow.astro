@@ -8,7 +8,7 @@ const slides = [
 ];
 ---
 
-<div class="section1">
+<div class="section1 margin_new">
   <div>
     <div class="slideshow">
       {slides.map((src) => <img src={src} alt="slideshow" class="slide" />)}
@@ -131,13 +131,24 @@ const slides = [
       opacity: 0;
     }
   }
+.margin_new {
+  margin: 0 var(--S-);
+  margin-top: 0 var(--S-);
+  }
+  
 
-  @media (min-width: 800px) {
+@media (min-width: 800px) {
+
+    .margin_new {
+    margin: 0 var(--XXL-);
+    margin-top: 0 var(--S-);
+  }
     .section1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--XXL-);
       margin-top: var(--XL-);
+      margin-bottom: var(--XL-);
     }
 
     .grid_graes .h1 {

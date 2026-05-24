@@ -2,7 +2,7 @@
 const { Dankort } = Astro.props;
 ---
 
-<article><h4 class="h4">{Dankort.place}</h4>
+<article data-type={Dankort.county}><h4 class="h4">{Dankort.place}</h4>
     <img src={Dankort.image} alt="naturområderne i Danmark" class="natureimg">
     <div class="overlay">
          <img src={Dankort.svg} alt="svg animation" class="svgimg">
@@ -17,7 +17,6 @@ const { Dankort } = Astro.props;
     article{
        margin: 0 auto;
        position: relative;
-       display: inline-block;
     }
 
   button {
@@ -46,8 +45,9 @@ button:hover {
         top: 0;
         left: 0;
         color: var(--dankort-hvid);
-        margin: 1rem 1.2rem;
+        margin: 1.4rem 1.6rem;
         z-index: 3;
+        white-space: nowrap;
     }
 
     .overlay {
@@ -82,25 +82,32 @@ button:hover {
             align-items: center;
             opacity: 1;
             clip-path: inset(0 0 100% 0); 
-            transition: clip-path 3s ease-in-out;
+            transition: clip-path 3s ease-in, opacity 1s ease;
         }
 
          article:hover .svgimg {
              clip-path: inset(0 0 0% 0);
         }
 
+        article:not(:hover) .svgimg {
+            opacity: 0;
+}
+
+.hide {
+    display: none;
+}
+
         
+ @media (min-width: 800px) {
 
-         @media (min-width: 800px) {
-
-            article {
+    article {
                 display: inline-block;
                 margin: 0px;
             }
             
 button {
   font-weight: 700;
-  padding: 15px 40px;
+   padding: clamp(8px, 1.5vw, 15px) clamp(18px, 3vw, 40px);
     }
         }
 

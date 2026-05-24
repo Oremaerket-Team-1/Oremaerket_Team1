@@ -2,8 +2,7 @@
 const { Dankort } = Astro.props;
 ---
 
-<article><h4 class="h4">{Dankort.place}</h4>
-    <div class="img-place">
+<article data-type={Dankort.county}><h4 class="h4">{Dankort.place}</h4>
     <img src={Dankort.image} alt="naturområderne i Danmark" class="natureimg">
     <div class="overlay">
          <img src={Dankort.svg} alt="svg animation" class="svgimg">
@@ -21,10 +20,11 @@ const { Dankort } = Astro.props;
     }
 
   button {
+    display: flex;
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
-  bottom: 5%;
+  bottom: 8%;
   font-weight: 700;
   padding: 15px 25px;
   border-radius: 20px;
@@ -45,13 +45,17 @@ button:hover {
         top: 0;
         left: 0;
         color: var(--dankort-hvid);
-        margin: 1rem 1.2rem;
+        margin: 1.4rem 1.6rem;
         z-index: 3;
+        white-space: nowrap;
     }
 
     .overlay {
+        display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    inset: 0;   /* Shortcut for setting all four sides top,right,bottom,left */
+    inset: 0; /* Shortcut for setting all four sides top,right,bottom,left */
     border-radius: 20px;
     background: linear-gradient(
       180deg,
@@ -67,50 +71,43 @@ button:hover {
     }
     
     .natureimg {
+        display: block;
+        width: 100%;
     border-radius: 20px;
-    max-width: 293px;
     z-index: 1;
         }
 
-        .svgimg {
-            position: absolute;
+        article .svgimg {
             width: 100%;
-            left: -1%;
-            top: 13%;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .svgimg:hover {
+            align-items: center;
             opacity: 1;
-             animation: animateDash 2s linear forwards infinite;
+            clip-path: inset(0 0 100% 0); 
+            transition: clip-path 3s ease-in, opacity 1s ease;
         }
 
-        @keyframes animateDash {
-	0%,
-	0%,
-	0% {
-		opacity: 0;
-	}
+         article:hover .svgimg {
+             clip-path: inset(0 0 0% 0);
+        }
 
-	25%,
-	75%,
-    100% {
-		opacity: 1;
-	}
+        article:not(:hover) .svgimg {
+            opacity: 0;
+}
+
+.hide {
+    display: none;
 }
 
         
+ @media (min-width: 800px) {
 
-         @media (min-width: 800px) {
-            .natureimg {
-                max-width: 100%;
+    article {
+                display: inline-block;
+                margin: 0px;
             }
+            
 button {
-  left: 50%;
-  bottom: 8%;
   font-weight: 700;
-  padding: 15px 40px;
+   padding: clamp(8px, 1.5vw, 15px) clamp(18px, 3vw, 40px);
     }
         }
 

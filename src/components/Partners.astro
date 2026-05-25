@@ -1,0 +1,132 @@
+---
+
+---
+
+<section>
+<h2 class="h2">Partnere der donerer med os</h2>
+
+<div class="carousel_container">
+<div class="partnergrid-mobile">
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/FK_Logo_pos.svg" alt="FK logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/Flowering2.webp" alt="Flowering logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/Genbyg_Logo_WEB.svg" alt="Genbyg logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/lb.webp" alt="Lollands bank logo">
+</div>
+</div>
+
+
+
+
+<div class="partnergrid-mobile">
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/loberen.webp" alt="Løberen logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/faster.svg" alt="Faster Oikos logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/redmaden.webp" alt="Red Maden logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/merkur.svg" alt="Merkur Andelskasse logo">
+</div>
+</div>
+
+
+
+
+<div class="partnergrid-mobile">
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/risespare.svg" alt="Rise Sparekasse logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/sport24.svg" alt="Sport24 logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/sportigan.svg" alt="Sportigan logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/emmerys.svg" alt="Emmery's logo">
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+<style>
+
+
+ 
+.partnerbox {
+    height: 180px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding: 35px;
+    background-color: var(--dankort-hvid);
+    border-radius: 20px;
+    border: 1px solid var(--dankort-sort);
+    
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+          
+    }
+
+    
+}
+
+.partnergrid-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+ 
+}
+
+section {
+    margin: var(--S-);
+
+}
+
+.carousel_container {
+ display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        overflow-x: auto;
+        gap: 2rem;
+        scroll-snap-type: x mandatory;
+}
+
+ .carousel_container::-webkit-scrollbar { 
+        display: none;
+    }
+</style>

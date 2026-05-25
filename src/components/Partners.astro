@@ -2,11 +2,11 @@
 
 ---
 
-<section>
+<section class="mobile">
 <h2 class="h2">Partnere der donerer med os</h2>
 
 <div class="carousel_container">
-<div class="partnergrid-mobile">
+<div class="partnergrid-mobile 1">
 <div class="partnerbox">
 <img src="/assets/SVG/index_mobil/FK_Logo_pos.svg" alt="FK logo">
 </div>
@@ -27,7 +27,7 @@
 
 
 
-<div class="partnergrid-mobile">
+<div class="partnergrid-mobile 2">
 <div class="partnerbox">
 <img src="/assets/SVG/index_mobil/loberen.webp" alt="Løberen logo">
 </div>
@@ -48,7 +48,7 @@
 
 
 
-<div class="partnergrid-mobile">
+<div class="partnergrid-mobile 3">
 <div class="partnerbox">
 <img src="/assets/SVG/index_mobil/risespare.svg" alt="Rise Sparekasse logo">
 </div>
@@ -68,17 +68,77 @@
 
 
 </div>
+</section>
 
 
 
+<section class="desktop">
+<h2 class="h2">Partnere der donerer med os</h2>
 
+<div>
+<div class="partnergrid-desktop">
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/FK_Logo_pos.svg" alt="FK logo">
+</div>
 
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/Flowering2.webp" alt="Flowering logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/Genbyg_Logo_WEB.svg" alt="Genbyg logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/lb.webp" alt="Lollands bank logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/loberen.webp" alt="Løberen logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/faster.svg" alt="Faster Oikos logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/redmaden.webp" alt="Red Maden logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/merkur.svg" alt="Merkur Andelskasse logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/risespare.svg" alt="Rise Sparekasse logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/sport24.svg" alt="Sport24 logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/sportigan.svg" alt="Sportigan logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/emmerys.svg" alt="Emmery's logo">
+</div>
+
+</div>
 </section>
 
 
 <style>
 
+.mobile {
+    display: block;
+    margin-bottom: var(--XL-);
+}
 
+.desktop {
+    display: none;
+}
  
 .partnerbox {
     height: 180px;
@@ -129,4 +189,51 @@ section {
  .carousel_container::-webkit-scrollbar { 
         display: none;
     }
+
+
+    @media (min-width: 800px){
+
+    
+       
+        .mobile {
+            display: none;
+        }
+
+        .desktop {
+            display: block;
+            margin: 0 var(--XXL-);
+            margin-bottom: var(--XXL-);
+        }
+
+        .partnergrid-desktop {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            width: 100%;
+            
+        }
+
+        .partnerbox {
+             padding: 20px;
+        }
+
+    }
+
+     @media (min-width: 1080px){
+         .partnergrid-desktop {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            width: 100%;
+            
+        }
+        
+        .partnerbox {
+         padding: 40px;
+        }
+        
+     }
+
+
+
 </style>

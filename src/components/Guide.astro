@@ -8,18 +8,82 @@ import sunrise from "../Image/sunrise.webp";
     <div class="flex_h2_carousel">
     <h2 class="h2">Sådan får du Dankort på din telefon</h2>
     <div class="grid_carousel_illustation">
+        <div>
     <div class="carousel_container">
         <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
         <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
         <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
     </div>
+   <div class="dotstyling guide_dots">
+    <button class="dot active"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
+    </div>
+    </div>
     <img src="/assets/SVG/index_mobil/to_traeer_index_mobil.svg" alt="illustration af to træer" class="treesmobile">
     <img src="/assets/SVG/index_desktop/to_traeer_index_desktop.svg" alt="illustration af træer" class="treesdesktop">
     </div>
 </div>
+ 
 </section>
 
+<script>
+    const dots = document.querySelectorAll('.guide_dots .dot');
+    const carousel = document.querySelector('.carousel_container');
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            if (!carousel) return;
+            const carouselItem = carousel.children[index];
+            if (!carouselItem) return;
+            carouselItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); 
+           
+            dots.forEach(d => d.classList.remove('active'));
+            dot.classList.add('active');
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!carousel) return;
+                const index = Array.from(carousel.children).indexOf(entry.target);
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[index]) {
+                    dots[index].classList.add('active');
+                }
+            }
+        });
+    }, { threshold: 0.5});
+
+    document.querySelectorAll('.guide_graphic').forEach(item => {
+        observer.observe(item);
+    });
+
+</script>
+
 <style>
+
+
+    .dot {
+        border-radius: 100%;
+        border: none;
+        background-color: var(--dankort_graa_var2);
+        width: 10px;
+        height: 10px;
+
+        &.active {
+            background-color: var(--dankort_graa_var1);
+        }
+    }
+
+    .dotstyling {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: var(--S-);
+    }
 
     section {
         margin-top: var(--M-);

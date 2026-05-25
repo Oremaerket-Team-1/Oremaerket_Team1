@@ -4,9 +4,9 @@
 
 <section class="mobile">
 <h2 class="h2">Partnere der donerer med os</h2>
-
-<div class="carousel_container">
-<div class="partnergrid-mobile 1">
+<div>
+<div class="carousel_container_partners">
+<div class="partnergrid-mobile">
 <div class="partnerbox">
 <img src="/assets/SVG/index_mobil/FK_Logo_pos.svg" alt="FK logo">
 </div>
@@ -27,7 +27,7 @@
 
 
 
-<div class="partnergrid-mobile 2">
+<div class="partnergrid-mobile">
 <div class="partnerbox">
 <img src="/assets/SVG/index_mobil/loberen.webp" alt="Løberen logo">
 </div>
@@ -48,7 +48,7 @@
 
 
 
-<div class="partnergrid-mobile 3">
+<div class="partnergrid-mobile">
 <div class="partnerbox">
 <img src="/assets/SVG/index_mobil/risespare.svg" alt="Rise Sparekasse logo">
 </div>
@@ -66,11 +66,17 @@
 </div>
 </div>
 
-
 </div>
+<div class="dotstyling partner_dots">
+<button class="dot active"></button>
+<button class="dot"></button>
+<button class="dot"></button>
+</div>
+</div>
+
 </section>
 
-
+<!-- ------------- DESKTOP ---------------- -->
 
 <section class="desktop">
 <h2 class="h2">Partnere der donerer med os</h2>
@@ -129,7 +135,62 @@
 </section>
 
 
+<script>
+    const dots = document.querySelectorAll('.partner_dots .dot');
+    const carousel = document.querySelector('.carousel_container_partners');
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            if (!carousel) return;
+            const carouselItem = carousel.children[index];
+            if (!carouselItem) return;
+            carouselItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); 
+           
+            dots.forEach(d => d.classList.remove('active'));
+            dot.classList.add('active');
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!carousel) return;
+                const index = Array.from(carousel.children).indexOf(entry.target);
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[index]) {
+                    dots[index].classList.add('active');
+                }
+            }
+        });
+    }, { threshold: 0.5});
+
+    document.querySelectorAll('.partnergrid-mobile').forEach(item => {
+        observer.observe(item);
+    });
+
+</script>
+
 <style>
+
+     .dot {
+        border-radius: 100%;
+        border: none;
+        background-color: var(--dankort_graa_var2);
+        width: 10px;
+        height: 10px;
+
+        &.active {
+            background-color: var(--dankort_graa_var1);
+        }
+    }
+
+    .dotstyling {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: var(--S-);
+    }
 
 .mobile {
     display: block;
@@ -177,7 +238,7 @@ section {
 
 }
 
-.carousel_container {
+.carousel_container_partners {
  display: flex;
         flex-flow: row nowrap;
         width: 100%;
@@ -186,7 +247,7 @@ section {
         scroll-snap-type: x mandatory;
 }
 
- .carousel_container::-webkit-scrollbar { 
+ .carousel_container_partners::-webkit-scrollbar { 
         display: none;
     }
 

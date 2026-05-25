@@ -9,6 +9,11 @@ body {
   background-color: var(--bg-base);
 }
 
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 /*-------------------- VARIABLER ----------------------- */
 
 /*-------------------- FARVER ----------------------- */

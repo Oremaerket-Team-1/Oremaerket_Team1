@@ -21,7 +21,7 @@ console.log(data);
 
 
 <Layout>
-  <Sec1Filtering></Sec1Filtering>
+  <Sec1Filtering/>
 <section id="filter">
    <h2 class="h2">Her har vi doneret til den danske natur</h2>
     <div class="buttons">
@@ -65,11 +65,12 @@ console.log(data);
  </div>
   </div>
 </section>
+
 <section class="card">
   {data.map((Dankort) => <Card {Dankort} />)}
 </section>
 
-<Sec3Filtering></Sec3Filtering>
+<Sec3Filtering/>
 </Layout>
 
 <style>

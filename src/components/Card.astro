@@ -2,10 +2,10 @@
 const { Dankort } = Astro.props;
 ---
 
-<article data-type={Dankort.county}><h4 class="h4">{Dankort.place}</h4>
-    <img src={Dankort.image} alt="naturområderne i Danmark" class="natureimg">
+<article data-type={Dankort.region}><h3 class="h4">{Dankort.place}</h3>
+    <img src={Dankort.image} alt="billeder af naturområderne i Danmark" fetchpriority="high" width="100%" height="100%"" class="natureimg">
     <div class="overlay">
-         <img src={Dankort.svg} alt="svg animation" class="svgimg">
+         <img src={Dankort.svg} alt="svg animation" loading="lazy" class="svgimg">
     </div>
     <a href={Dankort.link} target="_blank">
       <button class="p">LÆS MERE</button></a>
@@ -40,7 +40,7 @@ button:hover {
   background-color:#BD191C;
 }
 
-    h4 {
+    h3 {
         position: absolute;
         top: 0;
         left: 0;
@@ -66,36 +66,37 @@ button:hover {
     z-index: 2;
     }
 
-    .overlay:hover {
-        background: none;
-    }
+       .overlay:hover {
+       background: none;
+       }
     
-    .natureimg {
+        .natureimg {
         display: block;
+        height:auto;
         width: 100%;
-    border-radius: 20px;
-    z-index: 1;
+        border-radius: 20px;
+        z-index: 1;
         }
 
         article .svgimg {
-            width: 100%;
-            align-items: center;
-            opacity: 1;
-            clip-path: inset(0 0 100% 0); 
-            transition: clip-path 3s ease-in, opacity 1s ease;
+        width: 100%;
+        align-items: center;
+        opacity: 1;
+        clip-path: inset(0 0 100% 0); 
+        transition: clip-path 3s ease-in, opacity 1s ease;
         }
 
          article:hover .svgimg {
-             clip-path: inset(0 0 0% 0);
+        clip-path: inset(0 0 0% 0);
         }
 
         article:not(:hover) .svgimg {
-            opacity: 0;
-}
+        opacity: 0;
+       }
 
-.hide {
-    display: none;
-}
+        .hide {
+         display: none;
+       }
 
         
  @media (min-width: 800px) {

@@ -1,0 +1,162 @@
+---
+import Button from "../components/Button.astro";
+---
+<section>
+    <div>
+    <div class="count-wrapper1">
+<h2 class="count">2.929.336, 15 kr.</h2>
+<p class="p">Estimeret donation indtil videre</p>
+<div>
+<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-left-top">
+<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-right-top">
+</div>
+
+<div class="count-grid">
+<div class="count-flex1">
+<div>
+<p class="p">Det svarer til</p>
+<p class="p sbold">254.954m² natur</p>
+</div>
+<div>
+<p class="p">Eller</p>
+<p class="p sbold">36 fodboldbaner</p>
+</div>
+</div>
+<div class="count-flex2">
+<img src="/assets/SVG/index_mobil/soccerfieldsmall.svg" alt=" illustration affodboldbane">
+</div>
+</div>
+
+
+
+</div>
+
+<div class="count-wrapper2">
+    <Button title="OM DONATIONERNE"></Button>
+<div>
+<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-left-bottom">
+<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-right-bottom">
+</div>
+</div>
+
+
+
+
+
+</section>
+
+<style>
+
+    .count-flex1 {
+        display: flex;
+        flex-direction: column; 
+        gap: 3rem;
+        
+    }
+
+    .count-flex2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    .count-grid {
+        display: grid; 
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+        
+    }
+
+    .count-wrapper1 {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        
+    }
+
+    .count-wrapper2 {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+    }
+
+
+
+   
+
+    .frame-right-top {
+        display: flex;
+        position: absolute;
+        top: 10%;
+        right: 20px;
+        transform: scaleX(-1);
+        
+    }
+
+     .frame-left-top {
+        display: flex;
+        position: absolute;
+        top: 10%;
+        left: 20px;
+        
+        
+    }
+
+
+     .frame-right-bottom {
+        display: flex;
+        position: absolute;
+        top: 20%;
+        right: 20px;
+        transform: scaleX(-1) rotate(270deg);
+        
+    }
+
+     .frame-left-bottom {
+        display: flex;
+        position: absolute;
+        top: 20%;
+        left: 20px;
+        transform: rotate(270deg);
+        
+        
+    }
+
+
+    .count {
+        font-size: 32px;
+        font-weight: 500;
+        font-family: "Raleway";
+        font-variant-numeric: lining-nums;
+        font-feature-settings: "lnum";
+
+    }
+
+    .sbold {
+        font-weight: 700;
+        font-variant-numeric: lining-nums;
+        font-feature-settings: "lnum";
+    }
+
+    section {
+        margin-bottom: var(--L-);
+    }
+
+    @media (min-width: 800px) {
+        .count {
+            font-size: 64px;
+        }
+        section {
+            margin-bottom: var(--XXL-);
+        }
+
+
+          
+        
+    }
+      
+</style>

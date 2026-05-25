@@ -3,7 +3,8 @@ const { Dankort } = Astro.props;
 ---
 
 <article data-type={Dankort.region}><h3 class="h4">{Dankort.place}</h3>
-    <img src={Dankort.image} alt="billeder af naturområderne i Danmark" fetchpriority="high" width="100%" height="100%"" class="natureimg">
+    <img src={Dankort.image} alt="billeder af naturområderne i Danmark" width="400"
+  height="300" loading="lazy" class="natureimg">
     <div class="overlay">
          <img src={Dankort.svg} alt="svg animation" loading="lazy" class="svgimg">
     </div>

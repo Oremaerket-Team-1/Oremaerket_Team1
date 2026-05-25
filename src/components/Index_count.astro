@@ -7,8 +7,8 @@ import Button from "../components/Button.astro";
 <h2 class="count">2.929.336, 15 kr.</h2>
 <p class="p">Estimeret donation indtil videre</p>
 <div>
-<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-left-top">
-<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-right-top">
+<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-left-top frame">
+<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-right-top frame">
 </div>
 
 <div class="count-grid">
@@ -28,14 +28,31 @@ import Button from "../components/Button.astro";
 </div>
 
 
+<div class="count-grid-desktop">
+
+<div>
+<p class="p">Det svarer til</p>
+<p class="p sbold">254.954m² natur</p>
+</div>
+<div>
+<img src="/assets/SVG/index_mobil/soccerfieldsmall.svg" alt=" illustration affodboldbane" class="soccerfield_desktop">
+</div>
+<div>
+<p class="p">Eller</p>
+<p class="p sbold">36 fodboldbaner</p>
+</div>
+
+
+</div>
+
 
 </div>
 
 <div class="count-wrapper2">
     <Button title="OM DONATIONERNE"></Button>
 <div>
-<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-left-bottom">
-<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-right-bottom">
+<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-left-bottom frame">
+<img src="/assets/SVG/index_mobil/framecorner.svg" alt="" class="frame-right-bottom frame">
 </div>
 </div>
 
@@ -46,6 +63,7 @@ import Button from "../components/Button.astro";
 </section>
 
 <style>
+
 
     .count-flex1 {
         display: flex;
@@ -64,7 +82,7 @@ import Button from "../components/Button.astro";
     .count-grid {
         display: grid; 
         grid-template-columns: 1fr 1fr;
-        padding: 2rem;
+        padding: 4rem;
         
     }
 
@@ -144,6 +162,11 @@ import Button from "../components/Button.astro";
 
     section {
         margin-bottom: var(--L-);
+        max-width: 1200px;
+    }
+
+    .count-grid-desktop {
+        display: none;
     }
 
     @media (min-width: 800px) {
@@ -154,9 +177,63 @@ import Button from "../components/Button.astro";
             margin-bottom: var(--XXL-);
         }
 
+        .frame {
+            width: 5%;
+            max-width: 100px;
+        }
 
+        section {
+            margin: 0 var(--XXL-);
+            margin-bottom: var(--XXL-);
+        }
+
+
+       .frame-right-bottom {
+        display: flex;
+        position: absolute;
+        top: -30%;
+        right: 20px;
+        transform: scaleX(-1) rotate(270deg);
+        
+    }
+
+     .frame-left-bottom {
+        display: flex;
+        position: absolute;
+        top: -30%;
+        left: 20px;
+        transform: rotate(270deg);
+     }
           
         
     }
+
+
+    @media (min-width: 1080px){
+        .count-grid{
+            display:none;
+        }
+
+        .count-grid-desktop{
+            display: grid;
+            grid-template-columns: 1fr 3fr 2fr;
+            justify-items: center;
+            gap: 2rem;
+            padding: 5rem;
+
+        }
+
+        .soccerfield_desktop {
+            display: flex; 
+            justify-content: center;
+            width: 150%;
+            max-width: 300px;
+        }
+
+   
+        
+    }
+
+
       
 </style>

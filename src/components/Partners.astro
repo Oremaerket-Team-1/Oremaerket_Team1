@@ -1,0 +1,300 @@
+---
+
+---
+
+<section class="mobile">
+<h2 class="h2">Partnere der donerer med os</h2>
+<div>
+<div class="carousel_container_partners">
+<div class="partnergrid-mobile">
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/FK_Logo_pos.svg" alt="FK logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/Flowering2.webp" alt="Flowering logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/Genbyg_Logo_WEB.svg" alt="Genbyg logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/lb.webp" alt="Lollands bank logo">
+</div>
+</div>
+
+
+
+
+<div class="partnergrid-mobile">
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/loberen.webp" alt="Løberen logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/faster.svg" alt="Faster Oikos logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/redmaden.webp" alt="Red Maden logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/merkur.svg" alt="Merkur Andelskasse logo">
+</div>
+</div>
+
+
+
+
+<div class="partnergrid-mobile">
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/risespare.svg" alt="Rise Sparekasse logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/sport24.svg" alt="Sport24 logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/sportigan.svg" alt="Sportigan logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/emmerys.svg" alt="Emmery's logo">
+</div>
+</div>
+
+</div>
+<div class="dotstyling partner_dots">
+<button class="dot active"></button>
+<button class="dot"></button>
+<button class="dot"></button>
+</div>
+</div>
+
+</section>
+
+<!-- ------------- DESKTOP ---------------- -->
+
+<section class="desktop">
+<h2 class="h2">Partnere der donerer med os</h2>
+
+<div>
+<div class="partnergrid-desktop">
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/FK_Logo_pos.svg" alt="FK logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/Flowering2.webp" alt="Flowering logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/Genbyg_Logo_WEB.svg" alt="Genbyg logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/lb.webp" alt="Lollands bank logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/loberen.webp" alt="Løberen logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/faster.svg" alt="Faster Oikos logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/redmaden.webp" alt="Red Maden logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/merkur.svg" alt="Merkur Andelskasse logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/risespare.svg" alt="Rise Sparekasse logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/sport24.svg" alt="Sport24 logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/sportigan.svg" alt="Sportigan logo">
+</div>
+
+<div class="partnerbox">
+<img src="/assets/SVG/index_mobil/emmerys.svg" alt="Emmery's logo">
+</div>
+
+</div>
+</section>
+
+
+<script>
+    const dots = document.querySelectorAll('.partner_dots .dot');
+    const carousel = document.querySelector('.carousel_container_partners');
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            if (!carousel) return;
+            const carouselItem = carousel.children[index];
+            if (!carouselItem) return;
+            carouselItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); 
+           
+            dots.forEach(d => d.classList.remove('active'));
+            dot.classList.add('active');
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!carousel) return;
+                const index = Array.from(carousel.children).indexOf(entry.target);
+                dots.forEach(d => d.classList.remove('active'));
+                if (dots[index]) {
+                    dots[index].classList.add('active');
+                }
+            }
+        });
+    }, { threshold: 0.5});
+
+    document.querySelectorAll('.partnergrid-mobile').forEach(item => {
+        observer.observe(item);
+    });
+
+</script>
+
+<style>
+
+     .dot {
+        border-radius: 100%;
+        border: none;
+        background-color: var(--dankort_graa_var2);
+        width: 10px;
+        height: 10px;
+
+        &.active {
+            background-color: var(--dankort_graa_var1);
+        }
+    }
+
+    .dotstyling {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: var(--S-);
+    }
+
+.mobile {
+    display: block;
+    margin-bottom: var(--XL-);
+}
+
+.desktop {
+    display: none;
+}
+ 
+.partnerbox {
+    height: 180px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding: 35px;
+    background-color: var(--dankort-hvid);
+    border-radius: 20px;
+    border: 1px solid var(--dankort-sort);
+    
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+          
+    }
+
+    
+}
+
+.partnergrid-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+ 
+}
+
+section {
+    margin: var(--S-);
+
+}
+
+.carousel_container_partners {
+ display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        overflow-x: auto;
+        gap: 2rem;
+        scroll-snap-type: x mandatory;
+}
+
+ .carousel_container_partners::-webkit-scrollbar { 
+        display: none;
+    }
+
+
+    @media (min-width: 800px){
+
+    
+       
+        .mobile {
+            display: none;
+        }
+
+        .desktop {
+            display: block;
+            margin: 0 var(--XXL-);
+            margin-bottom: var(--XXL-);
+        }
+
+        .partnergrid-desktop {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            width: 100%;
+            
+        }
+
+        .partnerbox {
+             padding: 20px;
+        }
+
+    }
+
+     @media (min-width: 1080px){
+         .partnergrid-desktop {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            width: 100%;
+            
+        }
+        
+        .partnerbox {
+         padding: 40px;
+        }
+        
+     }
+
+
+
+</style>

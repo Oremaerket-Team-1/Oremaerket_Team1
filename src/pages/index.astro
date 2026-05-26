@@ -1,5 +1,6 @@
 ---
 import Hero from "../components/Hero.astro";
+import Count from "../components/Index_count.astro";
 import Advantages from "../components/Advantages.astro";
 import Guide from "../components/Guide.astro";
 import Layout from "../layouts/Layout.astro";
@@ -18,11 +19,14 @@ const options={
 
 const data = await fetch(endpoint, options).then((responsive) => responsive.json());
 console.log(data);
+import PhysicalcardIndex from "../components/Physicalcard_index.astro";
+import Partners from "../components/Partners.astro";
 
 ---
 
 <Layout>
   <Hero />
+  <Count />
   <Advantages />
   <Guide/>
    <h2 class="h2">Her har vi doneret til den danske natur</h2>
@@ -32,6 +36,8 @@ console.log(data);
   <div class="btn-seemore">
       <Button title = "SE FLERE"/>
       </div>
+  <PhysicalcardIndex />
+  <Partners />
 </Layout>
 
 <style>

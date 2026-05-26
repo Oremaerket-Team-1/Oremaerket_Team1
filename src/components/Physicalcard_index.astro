@@ -1,0 +1,268 @@
+---
+//@ts-nocheck
+import Button from "../components/Button.astro";
+---
+    
+   
+<div class="no_widows">
+
+<section class="section_1">
+<div>
+  <h1 class="h1">
+    Se de nye Dankort Øremærket designs 
+  </h1>
+
+ </div>
+  <div class="imgOgBi">
+
+    <img class="bi_mobil"
+      src="/assets/SVG/fysisk_kort_mobil/bi_fysiskkort_mobil.svg"
+      alt="bi"
+    />
+     <!-- <img class="bi_desktop"
+      src="/assets/SVG/fysisk_kort_desktop/bi_fysiskkort_desktop.svg"
+      alt="bi"
+    /> -->
+
+    <img class="cardfane"
+      src="/assets/img/dankort/cardfane.webp"
+      alt="dankort med nyt design"
+    />
+
+  </div>
+
+  <div class="p">
+    
+<p class="p">
+
+Når du har et Dankort kan du vælge at skifte til et af vores designs, så det bliver lettere at genkende, når du skal finde det frem - ligemeget om det er digitalt eller fysisk.
+  <br><br>
+
+På den måde ved du, at du har fået fat i det rigtige kort og at du er med til at sørge for at vi støtter naturen endnu mere.
+</p>
+  </div>
+
+<div class="knap">
+<Button title="LÆS MERE"></Button>
+</div>  
+
+</section>
+</div>
+
+
+
+<style>
+
+
+.bi_mobil {
+    display: none;
+  }
+.bi_desktop {
+    display: none;
+}
+h1, h2 {
+  text-wrap: block;
+}
+
+p, li {
+  text-wrap: pretty;
+}
+
+/* no widows */
+.section_1 {
+  display: grid;
+  grid-template-areas:
+    "image"
+    "title"
+    "text";
+}
+
+.h1 {
+  grid-area: title;
+}
+
+.imgOgBi {
+  grid-area: image;
+}
+
+.p {
+  grid-area: text;
+}
+
+
+.guidetekst {
+  padding-left: 22px;
+}
+
+
+.bi_mobil {
+  display: block;
+  margin: var(--S-) auto;
+  width: 80%;
+}
+
+.graes {
+    display: none;
+}
+
+.bi_desktop {
+  display: none;
+  transform: translateY(90px);
+  rotate: 20deg;
+}
+
+
+li{
+
+    margin-bottom: 30px;
+}
+
+
+.imgOgBi {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SVG bagved */
+.imgOgBi img:first-child {
+  position: absolute;
+  width: 100;
+  z-index: 1;
+
+}
+
+/* Webp foran */
+.imgOgBi img:last-child {
+  position: absolute;
+  width: 70%;
+  z-index: 2;
+  transform: translate(20px, 20px);
+}
+
+
+
+
+.greas {
+  display: none;
+}
+.knap_raev {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 24px;
+  margin-top: var(--L-);
+  margin-bottom: 70px;
+}
+
+.knap_raev img {
+  width: 50px;
+  height: auto;
+}
+
+section {
+  margin: 0 var(--S-);
+}
+
+
+
+/* -------- desktop ----------------- */
+
+
+@media (min-width: 800px) {
+
+.knap {
+        margin-top: 30px;
+    }
+
+
+
+  section {
+    margin: 0 var(--XXL-);  
+  }
+  
+  .graes {
+    display: block;
+  }
+
+.bi_mobil {
+    display: none;
+  }
+.bi_desktop {
+    display: block;
+
+  }
+  .bi {
+  width: clamp(
+    100px,
+    25vw,
+    600px
+  ); 
+
+  height: auto;
+}
+
+ 
+  /* ---------- SECTION 1 ---------- */
+
+
+
+
+
+/* VENSTRE SIDE */
+
+
+  .section_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: none;
+    column-gap: var(--S-);
+    align-items: start;
+    max-width: 1200px;
+    margin-top: var(--L-);
+    margin-bottom: var(--L-);
+  }
+}
+
+
+.section_1 .h1 {
+ grid-column: 2;
+ grid-row: 1;
+}
+
+.section_1 .p {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 600px;
+}
+
+/* HØJRE SIDE */
+
+.imgOgBi {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+
+  justify-self: start;
+  width: 100%;
+  rotate: -20deg;
+}
+.bi_desktop {
+    display: block;
+    transform: translateY(390px) scaleX(-1);
+    rotate: -20deg;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 90%;
+}
+
+.cardfane{
+  rotate: 20deg;
+
+} 
+    
+</style>
+

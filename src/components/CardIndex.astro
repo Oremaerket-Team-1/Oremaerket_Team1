@@ -2,46 +2,20 @@
 const { Dankort } = Astro.props;
 ---
 
-<article data-type={Dankort.region}><h3 class="h4">{Dankort.place}</h3>
-    <img src={Dankort.image} alt="billeder af naturområderne i Danmark" width="400"
-  height="300" loading="lazy" class="natureimg">
+
+
+<article><h3 class="h4">{Dankort.place}</h3>
+    <img src={Dankort.image} alt="billeder af naturområderne i Danmark" loading="lazy" class="natureimg">
     <div class="overlay">
          <img src={Dankort.svg} alt="svg animation" loading="lazy" class="svgimg">
     </div>
-    <a href={Dankort.link} target="_blank">
-      <button class="p">LÆS MERE</button></a>
-
-      
-    
-    
-</article>
+    </article>
 
 <style>
     article{
        margin: 0 auto;
        position: relative;
     }
-
-  button {
-    display: flex;
-  position: absolute;
-  transform: translateX(-50%);
-  left: 50%;
-  bottom: 8%;
-  font-weight: 700;
-  padding: 15px 25px;
-  border-radius: 20px;
-  color: var(--dankort-hvid);
-  background: var(--dankort-roed);
-  border: none;
-  cursor: pointer;
-  z-index: 4;
-  white-space: nowrap;
-    }
-
-button:hover {
-  background-color:#BD191C;
-}
 
     h3 {
         position: absolute;
@@ -75,8 +49,9 @@ button:hover {
     
         .natureimg {
         display: block;
-        height:auto;
-        width: 100%;
+   height: auto;
+    width: 100%;
+    max-width: 100%;
         border-radius: 20px;
         z-index: 1;
         }
@@ -109,10 +84,6 @@ button:hover {
                 margin: 0px;
             }
             
-button {
-  font-weight: 700;
-   padding: clamp(8px, 1.5vw, 15px) clamp(18px, 3vw, 40px);
-    }
         }
 
 </style>

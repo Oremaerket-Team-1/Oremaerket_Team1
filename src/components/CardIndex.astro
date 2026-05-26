@@ -1,0 +1,89 @@
+---
+const { Dankort } = Astro.props;
+---
+
+
+
+<article><h3 class="h4">{Dankort.place}</h3>
+    <img src={Dankort.image} alt="billeder af naturområderne i Danmark" loading="lazy" class="natureimg">
+    <div class="overlay">
+         <img src={Dankort.svg} alt="svg animation" loading="lazy" class="svgimg">
+    </div>
+    </article>
+
+<style>
+    article{
+       margin: 0 auto;
+       position: relative;
+    }
+
+    h3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--dankort-hvid);
+        margin: 1.4rem 1.6rem;
+        z-index: 3;
+        white-space: nowrap;
+    }
+
+    .overlay {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0; /* Shortcut for setting all four sides top,right,bottom,left */
+    border-radius: 20px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 12%,
+      rgba(30, 30, 30, 0.5) 22%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+    }
+
+       .overlay:hover {
+       background: none;
+       }
+    
+        .natureimg {
+        display: block;
+   height: auto;
+    width: 100%;
+    max-width: 100%;
+        border-radius: 20px;
+        z-index: 1;
+        }
+
+        article .svgimg {
+        width: 100%;
+        align-items: center;
+        opacity: 1;
+        clip-path: inset(0 0 100% 0); 
+        transition: clip-path 3s ease-in, opacity 1s ease;
+        }
+
+         article:hover .svgimg {
+        clip-path: inset(0 0 0% 0);
+        }
+
+        article:not(:hover) .svgimg {
+        opacity: 0;
+       }
+
+        .hide {
+         display: none;
+       }
+
+        
+ @media (min-width: 800px) {
+
+    article {
+                display: inline-block;
+                margin: 0px;
+            }
+            
+        }
+
+</style>

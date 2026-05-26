@@ -3,6 +3,21 @@ import Hero from "../components/Hero.astro";
 import Advantages from "../components/Advantages.astro";
 import Guide from "../components/Guide.astro";
 import Layout from "../layouts/Layout.astro";
+import CardIndex from "../components/CardIndex.astro";
+import Button from "../components/Button.astro";
+
+const endpoint = "https://uigtgwaojslfwhlxfbfn.supabase.co/rest/v1/Dankort?limit=3"
+const key = "sb_publishable_DddfZPvMIKUo6VRZTKBaMg_KaVqL-hm"
+
+const options={
+   headers: 
+   {apikey: key,
+    Authorization: `Bearer ${key}`
+   },
+}
+
+const data = await fetch(endpoint, options).then((responsive) => responsive.json());
+console.log(data);
 
 ---
 
@@ -10,5 +25,69 @@ import Layout from "../layouts/Layout.astro";
   <Hero />
   <Advantages />
   <Guide/>
+   <h2 class="h2">Her har vi doneret til den danske natur</h2>
+  <section class="card">
+      {data.map((Dankort) => <CardIndex {Dankort} />)}
+  </section>
+  <div class="btn-seemore">
+      <Button title = "SE FLERE"/>
+      </div>
 </Layout>
+
+<style>
+  section {
+    margin: 0 var(--S-);
+    margin-top: var(--M-);
+  }
+
+  .btn-seemore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--L-);
+    margin-bottom: var(--L-);
+  }
+
+  p {
+    margin-bottom: var(--S-);
+  }
+
+  h2 {
+    margin: 0 var(--S-);
+    margin-bottom: var(--S-);
+    max-width: 50%;
+  }
+
+
+  .card {
+    display: grid;
+    margin-bottom: var(--S-);
+    gap: var(--L-);
+  }
+
+  .places {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--XS-);
+    justify-content: center;
+  }
+
+  @media (min-width: 800px) {
+    section {
+      margin: 0 120px;
+    }
+
+    h2 {
+      max-width: 100%;
+       margin: 0 120px;
+       margin-bottom: var(--S-);
+       margin-top:var(--XXL-);
+    }
+
+    .card {
+       grid-template-columns: repeat(3, 1fr);
+       gap: var(--L-);
+    }
+  }
+</style>
 

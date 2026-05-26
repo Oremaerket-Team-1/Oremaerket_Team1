@@ -7,7 +7,7 @@
 
 body {
   background-color: var(--bg-base);
-  font-family: "Raleway Variable";
+  font-family: "Raleway Variable", sans-serif;
 }
 
 /*-------------------- VARIABLER ----------------------- */

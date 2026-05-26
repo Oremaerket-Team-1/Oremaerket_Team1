@@ -8,6 +8,7 @@ import CardIndex from "../components/CardIndex.astro";
 import Button from "../components/Button.astro";
 import PhysicalcardIndex from "../components/Physicalcard_index.astro";
 import Partners from "../components/Partners.astro";
+import Faq from "../components/Faq.astro";
 
 const endpoint = "https://uigtgwaojslfwhlxfbfn.supabase.co/rest/v1/Dankort?limit=3"
 const key = "sb_publishable_DddfZPvMIKUo6VRZTKBaMg_KaVqL-hm"
@@ -38,6 +39,8 @@ console.log(data);
       </div>
   <PhysicalcardIndex />
   <Partners />
+  <Faq />
+
 </Layout>
 
 <style>

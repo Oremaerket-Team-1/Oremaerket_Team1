@@ -5,6 +5,9 @@ import Advantages from "../components/Advantages.astro";
 import Guide from "../components/Guide.astro";
 import Layout from "../layouts/Layout.astro";
 import CardIndex from "../components/CardIndex.astro";
+import Button from "../components/Button.astro";
+import PhysicalcardIndex from "../components/Physicalcard_index.astro";
+import Partners from "../components/Partners.astro";
 
 const endpoint = "https://uigtgwaojslfwhlxfbfn.supabase.co/rest/v1/Dankort?limit=3"
 const key = "sb_publishable_DddfZPvMIKUo6VRZTKBaMg_KaVqL-hm"
@@ -18,8 +21,6 @@ const options={
 
 const data = await fetch(endpoint, options).then((responsive) => responsive.json());
 console.log(data);
-import PhysicalcardIndex from "../components/Physicalcard_index.astro";
-import Partners from "../components/Partners.astro";
 
 ---
 

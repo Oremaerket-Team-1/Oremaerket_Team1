@@ -16,9 +16,9 @@
     </div>
     <nav>
       <ul class="menu">
-        <li><a href="/counting">Tæller</a></li>
-        <li><a href="/filtering">Hvad donerer vi til?</a></li>
-        <li><a href="/physicalcard">Fysiske dankort</a></li>
+        <li><a href="/counting">Følg donationstælleren live</a></li>
+        <li><a href="/filtering">Områder vi donerer til</a></li>
+        <li><a href="/physicalcard">Se de nye Øremærket Dankort</a></li>
       </ul>
       <button aria-label="Navigation" class="burger">
         <span class="line"></span>
@@ -79,7 +79,9 @@
   }
 
   .menu li {
-    margin-right: 20px;
+    /* margin-right: 20px; */
+    text-align: end;
+    padding-bottom: var(--XXS-);
   }
 
   .menu li:last-child {
@@ -90,15 +92,14 @@
     font-family: "Raleway";
     font-size: 30px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 100%;
-    text-transform: uppercase;
     /* display: block; */
     padding: 10px;
     color: var(--dankort-sort);
     text-decoration: none;
     transition: color 0.3s;
-    text-align: end;
+    /* text-align: end; */
   }
 
   .menu a:hover {
@@ -135,7 +136,7 @@
   }
 
   nav.active .menu li {
-    margin: var(--XS-) var(--S-);
+    margin: var(--XS-);
   }
 
   nav.active .menu a {
@@ -175,6 +176,13 @@
   @media (min-width: 800px) {
     .marginheader {
       margin: 0 var(--XXL-);
+    }
+    .menu a {
+      margin: 0 var(--XXL-);
+    }
+
+    .menu li {
+      padding-bottom: var(--S-);
     }
   }
 </style>

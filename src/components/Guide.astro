@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import sunrise from "../Image/sunrise.webp";
+import desktop1 from "../Image/desktop1.webp";
+import desktop2 from "../Image/desktop2.webp";
+import desktop3 from "../Image/desktop3.webp";
 ---
 
 
@@ -10,14 +12,14 @@ import sunrise from "../Image/sunrise.webp";
     <div class="grid_carousel_illustation">
         <div>
     <div class="carousel_container">
-        <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
-        <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
-        <Image src={sunrise} alt="placeholder billede" class="guide_graphic"/>
+        <Image src={desktop1} alt="placeholder billede" class="guide_graphic"/>
+        <Image src={desktop2} alt="placeholder billede" class="guide_graphic"/>
+        <Image src={desktop3} alt="placeholder billede" class="guide_graphic"/>
     </div>
    <div class="dotstyling guide_dots">
-    <button class="dot active"></button>
-    <button class="dot"></button>
-    <button class="dot"></button>
+    <button class="dot active" aria-label="Gå til slide 1"></button>
+    <button class="dot" aria-label="Gå til slide 2"></button>
+    <button class="dot" aria-label="Gå til slide 3"></button>
     </div>
     </div>
     <img src="/assets/SVG/index_mobil/to_traeer_index_mobil.svg" alt="illustration af to træer" class="treesmobile">

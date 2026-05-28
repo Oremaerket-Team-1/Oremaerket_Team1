@@ -23,7 +23,6 @@ const options={
 
 const data = await fetch(endpoint, options).then((responsive) => responsive.json());
 console.log(data);
-
 ---
 
 <Layout>
@@ -36,11 +35,13 @@ console.log(data);
       {data.map((Dankort) => <CardIndex {Dankort} />)}
   </section>
   <div class="btn-seemore">
-      <Button title = "SE FLERE"/>
+    <a href="/filtering">
+      <Button title = "SE FLERE" href=/>
+      </a>
       </div>
   <PhysicalcardIndex />
   <Partners />
-  <Faq />
+  <Faq/>
 
 </Layout>
 

@@ -43,7 +43,10 @@ På den måde ved du, at du har fået fat i det rigtige kort og at du er med til
   </div>
 
 <div class="knap">
+
+  <a href="/physicalcard">
 <Button title="LÆS MERE"></Button>
+</a>
 </div>  
 
 </section>
@@ -53,10 +56,6 @@ På den måde ved du, at du har fået fat i det rigtige kort og at du er med til
 
 <style>
 
-
-.bi_mobil {
-    display: none;
-  }
 .bi_desktop {
     display: none;
 }
@@ -83,6 +82,14 @@ p, li {
 
 .imgOgBi {
   grid-area: image;
+  margin-top: var(--L-);
+    position: relative;
+  width: 80%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--XL-);
 }
 
 .p {
@@ -97,18 +104,12 @@ p, li {
 
 .bi_mobil {
   display: block;
-  margin: var(--S-) auto;
+  margin: var(--S-);
   width: 80%;
 }
 
 .graes {
     display: none;
-}
-
-.bi_desktop {
-  display: none;
-  transform: translateY(90px);
-  rotate: 20deg;
 }
 
 
@@ -117,30 +118,18 @@ li{
     margin-bottom: 30px;
 }
 
-
-.imgOgBi {
-  position: relative;
-  width: 320px;
-  height: 320px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* SVG bagved */
 .imgOgBi img:first-child {
   position: absolute;
-  width: 100;
+  width: 100%;
   z-index: 1;
 
 }
 
 /* Webp foran */
 .imgOgBi img:last-child {
-  position: absolute;
   width: 70%;
   z-index: 2;
-  transform: translate(20px, 20px);
 }
 
 
@@ -149,7 +138,7 @@ li{
 .greas {
   display: none;
 }
-.knap_raev {
+.knap {
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
@@ -158,13 +147,13 @@ li{
   margin-bottom: 70px;
 }
 
-.knap_raev img {
+.knap img {
   width: 50px;
   height: auto;
 }
 
 section {
-  margin: var(--XL-) var(--S-);
+  margin: 0 var(--S-)
 }
 
 
@@ -178,10 +167,8 @@ section {
         margin-top: 30px;
     }
 
-
-
   section {
-    margin: var(--XXL-) var(--XXL-);  
+    margin: 0 120px; 
   }
   
   .graes {
@@ -191,18 +178,8 @@ section {
 .bi_mobil {
     display: none;
   }
-.bi_desktop {
-    display: block;
-
-  }
   .bi {
-  width: clamp(
-    100px,
-    25vw,
-    600px
-  ); 
-
-  height: auto;
+  width: 100%;
 }
 
  
@@ -222,10 +199,9 @@ section {
     column-gap: var(--S-);
     align-items: start;
     max-width: 1200px;
-    margin-top: var(--L-);
-    margin-bottom: var(--L-);
+    margin-top: var(--XXL-);
+    margin-bottom: var(--XXL-);
   }
-}
 
 
 .section_1 .h1 {
@@ -244,25 +220,27 @@ section {
 .imgOgBi {
   grid-column: 1;
   grid-row: 1 / span 3;
-
-  justify-self: start;
+  position: relative;
   width: 100%;
+  height: 500px;
+  justify-self: start;
   rotate: -20deg;
 }
 .bi_desktop {
-    display: block;
-    transform: translateY(390px) scaleX(-1);
+     display: block;
+    transform: translateY(290px) scaleX(-1);  /* ← much smaller value */
     rotate: -20deg;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 90%;
+    bottom: -100px;
+    right: -100px;
+    width: 110%;
 }
 
 .cardfane{
   rotate: 20deg;
 
 } 
+}
     
 </style>
 

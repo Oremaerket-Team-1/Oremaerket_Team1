@@ -241,6 +241,7 @@ Få komponenterne til at virke på siderne de skal bruges til.
 - Teste fetch-kald separat
 - Bruge URLSearchParams
 - Bruge browserns inspect
+- Tjekke localhost
 - Dele opgaverne mere tydeligt i gruppen
 
 ---
@@ -251,7 +252,7 @@ Hvis vi skulle arbejde videre med projektet, kunne vi forbedre det ved at tilfø
 
 - En dynamisk tæller, gennem Javascript
 - Have et bedre overblik over siderne
-- ***
+- Lave den mere brugervenlig i responsive
 
 ## Gruppemedlemmer
 

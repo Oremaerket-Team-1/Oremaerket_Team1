@@ -219,7 +219,7 @@ Det gjorde det nemmere at holde styr på, hvem der lavede hvad.
 
 ## Bæredygtighed
 
-Vi har tænkt bæredygtighed ind i projektet ved at holde page weight under 500 kb, samt en enkel informationasarkitektur.
+Vi har tænkt bæredygtighed ind i projektet ved at sigte efter at holde page weight under 500 kb, samt en enkel informationasarkitektur. Dog har vi haft udfordringer på nogle af siderne med at holde page weight under 500 kb pga mange SVG'er og manglende billedeoptimering på fx CSS animationen.
 
 **Tiltag:**
 

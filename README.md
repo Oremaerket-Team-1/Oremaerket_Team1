@@ -6,9 +6,9 @@ Vi har fået til opgave at udvikle en digital løsning med udgangspunkt i Dankor
 
 ## Links
 
-- GitHub repository:
-- Netlify:
-- Figma:
+- GitHub repository: https://github.com/Oremaerket-Team-1/Oremaerket_Team1
+- Netlify: https://ekteam1.netlify.app/
+- Figma: https://www.figma.com/design/lDkO1m1gmHedsgUxVn5uk6/EKSAMENSOPGAVE-2.-semester--Multimediedesign--F2026?node-id=5-2&t=YK8RTlYfv0dhUXFX-1
 
 ## Projektstruktur
 
@@ -16,10 +16,9 @@ Projektet er opdelt i HTML, CSS og JavaScript-filer.
 
 ```
 ├── public/
-│   └── favicon_48x55.svg
-├── assets
-│    └──img
-│    └──SVG
+│    └── assets
+│──  img
+│──  SVG
 │
 ├── public/
 │   └── favicon_48x55.svg
@@ -111,7 +110,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## Navngivning
 
-Vi har navngivet vores components, variabler og funktioner så de tydeligt som muligt er selvforklarende.
+Vi har navngivet vores components, variabler og funktioner, så de tydeligt som muligt er selvforklarende.
 
 ### Eksempler på variabler
 
@@ -155,21 +154,19 @@ Vi henter data fra et API i JSON-format.
 **Et objekt kan fx se sådan ud:**
 
 ```json
+{
+  "id": 1,
 
-id: 1
+  "image": "https://uigtgwaojslfwhlxfbfn.supabase.co/storage/v1/object/sign/Dankort%20EK/owl.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmNhYzIxZC1lZDViLTRmZmMtOGM1Ny0wNzc2MDIzOGJjOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJEYW5rb3J0IEVLL293bC53ZWJwIiwiaWF0IjoxNzc5MjU4Mzk1LCJleHAiOjE4MTA3OTQzOTV9.c47CHVannolEz-cFFZwHz0dBGW0R8N9HIAaIE3bHtF8",
 
-created_at 2026-05-19T10:28:37.287773+00:00
+  "link": "https://naturfonden.dk/natur/skovene-paa-trelde-naes/",
 
-image: https://uigtgwaojslfwhlxfbfn.supabase.co/storage/v1/object/sign/Dankort%20EK/owl.webp?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85MmNhYzIxZC1lZDViLTRmZmMtOGM1Ny0wNzc2MDIzOGJjOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJEYW5rb3J0IEVLL293bC53ZWJwIiwiaWF0IjoxNzc5MjU4Mzk1LCJleHAiOjE4MTA3OTQzOTV9.c47CHVannolEz-cFFZwHz0dBGW0R8N9HIAaIE3bHtF8;
+  "place": "Trelde Næs",
 
-link: https://naturfonden.dk/natur/skovene-paa-trelde-naes/
+  "region": "Jylland",
 
-place: Trelde Næs
-
-region: Jylland
-
-svg: https://uigtgwaojslfwhlxfbfn.supabase.co/storage/v1/object/public/Dankort%20EK/owl.svg
-
+  "svg": "https://uigtgwaojslfwhlxfbfn.supabase.co/storage/v1/object/public/Dankort%20EK/owl.svg"
+}
 ```
 
 ### Felter vi bruger
@@ -177,7 +174,6 @@ svg: https://uigtgwaojslfwhlxfbfn.supabase.co/storage/v1/object/public/Dankort%2
 - **id** – id på API
 - **image** – URL til image
 - **link** - til at linke til de forskellige sider på naturfondens hjemmeside
-- **id** – gør at den vælger en bestemt limit med id og man kan vælge i array hvilke id man skal bruge.
 - **region** – bruger vi til filtrering af stederne, som virker på knapperne over vores cards.
 - **place** – viser stedets navn i card.
 - **title** – jobtitel på companion
@@ -223,27 +219,28 @@ Det gjorde det nemmere at holde styr på, hvem der lavede hvad.
 
 ## Bæredygtighed
 
-Vi har tænkt bæredygtighed ind i projektet ved at holde page weight under 250 kb samt en enkel informationasarkitektur.
+Vi har tænkt bæredygtighed ind i projektet ved at holde page weight under 500 kb, samt en enkel informationasarkitektur.
 
 **Tiltag:**
 
-- Ingen videoer
+- En kort video
 - Ingen tunge frameworks
 - Genbruge kode så meget som muligt
-- Optimerede billeder i webp og brugt Astro Image
+- Optimerede billeder i webp og brugt Astro Image til automatisk optimering
 
 ---
 
 ## Udfordringer undervejs
 
 En af vores udfordringer var at få data fra Rest API’et vist korrekt på siderne.
-Det var også lidt svært at få id med videre i URL’en til detaljesiden.
+Få komponenterne til at virke på siderne de skal bruges til.
 
 **Løsninger:**
 
 - Console.logge data undervejs
 - Teste fetch-kald separat
 - Bruge URLSearchParams
+- Bruge browserns inspect
 - Dele opgaverne mere tydeligt i gruppen
 
 ---
@@ -253,7 +250,7 @@ Det var også lidt svært at få id med videre i URL’en til detaljesiden.
 Hvis vi skulle arbejde videre med projektet, kunne vi forbedre det ved at tilføje:
 
 - En dynamisk tæller, gennem Javascript
--
+- Have et bedre overblik over siderne
 - ***
 
 ## Gruppemedlemmer

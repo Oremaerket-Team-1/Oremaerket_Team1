@@ -8,9 +8,9 @@ import Button from "../components/Button.astro";
 
 <section class="section_1">
 <div>
-  <h1 class="h1">
-    Se de nye Dankort Øremærket designs 
-  </h1>
+  <h2 class="h2">
+    Se de nye Dankort <br> Øremærket designs 
+  </h2>
 
  </div>
   <div class="imgOgBi">
@@ -59,7 +59,7 @@ På den måde ved du, at du har fået fat i det rigtige kort og at du er med til
 .bi_desktop {
     display: none;
 }
-h1, h2 {
+h2 {
   text-wrap: block;
 }
 
@@ -76,7 +76,7 @@ p, li {
     "text";
 }
 
-.h1 {
+.h2 {
   grid-area: title;
 }
 
@@ -199,12 +199,10 @@ section {
     column-gap: var(--S-);
     align-items: start;
     max-width: 1200px;
-    margin-top: var(--XXL-);
-    margin-bottom: var(--XXL-);
   }
 
 
-.section_1 .h1 {
+.section_1 .h2 {
  grid-column: 2;
  grid-row: 1;
 }
@@ -221,9 +219,8 @@ section {
   grid-column: 1;
   grid-row: 1 / span 3;
   position: relative;
-  width: 100%;
-  height: 500px;
-  justify-self: start;
+  width: 110%;
+  height: 200px;
   rotate: -20deg;
 }
 .bi_desktop {
